@@ -1,4 +1,5 @@
 <template>
+    <div>
 <div class="navi">
 <nav>
     <router-link style="text-decoration: none; color: black;list-style: none;font-weight: bold;"><span style="font-family: 'Times New Roman', Times, serif;font-size: 25px;color: #2CC1D5;font-weight: bold;">Charis</span>Action</router-link> 
@@ -59,10 +60,67 @@
                 des examins qui viserons à evaluer votre niveau et votre avancement au cours de votre apprentissage.</p>
                 <p style="color: white;font-size: 20px;font-family: 'Times New Roman', Times, serif;text-indent: 10px;margin: 60px;">Nous vous accompagnons dans l'obtention de vos different diplome,de votre parcours scolaire et même sociale.<br><br>
                     Nous sommes une structure qui c’est donnée pour mission de former les leaders de demain dans les domaines clés de l'informatique et de la technologie. Que vous souhaitiez vous épanouir en tant que développeur de logiciels, administrateur système, analyste de données ou encore concepteur d'applications web, notre équipe d'experts vous accompagnera tout au long de votre parcours.
-                </p>
-                 
+                </p> 
             </div>
     </div>
+    <section class="partie3">
+        <div class="formons">
+            <h2 style="font-size: 30px;font-family: 'Times New Roman', Times, serif;">NOS <span style="color: #2CC1D5;">FORMATIONS</span></h2>
+            <h3>Engagez-vous vers un avenir prospere</h3>
+        </div>
+        <div class="about">
+        <ul>
+
+            <li >
+                
+                <div>
+                    <img alt="" src="../assets/gestion de projet.jpg">
+                </div>
+              
+                    <span>GESTION DES PROJETS INFORMATIQUE</span>
+                
+            </li>
+            <li>
+
+                <div >
+                    <img alt="" src="../assets/developpement-site-web.jpg">
+                </div>
+                <span>CONCEPTION ET DEVELOPPEMNT D'APPLICATION WEB</span>
+                
+            </li >
+
+            <li>
+                <div>
+                    <img alt="" src="../assets/infographie.png">
+                </div>
+                <span>INFOGRAPHIE ET CREATION MULTIMEDIA</span>
+                
+            </li>
+            <li >         
+                <div>
+                    <img alt="" src="../assets/conception graphique.jpg">
+                </div>
+                <span>CONCEPTION GRAPHIQUE </span>
+                
+            </li>
+            <li >         
+                <div>
+                    <img alt="" src="../assets/app mobile.jpg">
+                </div>
+                <span>CONCEPTION ET DEVELOPPEMENT D'APPLICATION MOBILE</span>
+                
+            </li>
+            <li >         
+                <div>
+                    <img alt="" src="../assets/reseaux.jpg">
+                </div>
+                <span>RESEAUX ET ADMINISTRATION RESEAU</span>
+                
+            </li>
+        </ul>
+        </div>
+    </section>
+</div>
 </template>
 <style>
 body{
@@ -114,7 +172,7 @@ ul {
 }
 .overlay {
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 300px;
     transform: translate(-50%, -50%);
     color: white;
@@ -192,5 +250,48 @@ ul {
     font-size: 30px;
     padding-left: 70px;
   }
+ 
+.about {
+    margin: 25px auto;
+    padding: 0 8%;
+     /* background-color: rgba(0, 0, 0, 0.5); */
+     margin-top: 10px;
+}
+  
+.about ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.about li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3%;
+    transition: 0.5s;
+    height: 300px;
+    width: 28%;
+    margin-left: 0.0px;
+    margin-bottom: 0.0px;
+}
+
+.about li div {
+    width: 100%;
+    height: 60%;
+}
+
+.about li div img {
+    height: 100%;
+    width: 100%;
+} 
+
+span{
+    margin-top: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+}
+
 
 </style>

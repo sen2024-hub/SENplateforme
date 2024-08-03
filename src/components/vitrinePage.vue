@@ -199,8 +199,9 @@ img{
     width: 100%;
     height: 500px;
     background-color: white;
-    
 }
+    
+/* 
 .partie3 img{
     width: 650px;
     height: 700px;
@@ -211,7 +212,7 @@ img{
     height: 380px;
     border: solid;
     margin-left: 650px;
-    /* transform: translateY(-20px) */
+    
     position: relative; 
     bottom: 550px;
     background-color: black;
@@ -273,7 +274,7 @@ img{
     width: 60%;
     height: 30%;
     border: solid;
-} 
+}  */
 
 
 
