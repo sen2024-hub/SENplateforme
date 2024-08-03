@@ -73,7 +73,7 @@
 
             <li >
                 
-                <div>
+                <div class="mots">
                     <img alt="" src="../assets/gestion de projet.jpg">
                 </div>
               
@@ -82,7 +82,7 @@
             </li>
             <li>
 
-                <div >
+                <div class="mots" >
                     <img alt="" src="../assets/developpement-site-web.jpg">
                 </div>
                 <span>CONCEPTION ET DEVELOPPEMNT D'APPLICATION WEB</span>
@@ -90,28 +90,28 @@
             </li >
 
             <li>
-                <div>
+                <div class="mots">
                     <img alt="" src="../assets/infographie.png">
                 </div>
                 <span>INFOGRAPHIE ET CREATION MULTIMEDIA</span>
                 
             </li>
             <li >         
-                <div>
+                <div class="mots">
                     <img alt="" src="../assets/conception graphique.jpg">
                 </div>
                 <span>CONCEPTION GRAPHIQUE </span>
                 
             </li>
             <li >         
-                <div>
+                <div class="mots">
                     <img alt="" src="../assets/app mobile.jpg">
                 </div>
                 <span>CONCEPTION ET DEVELOPPEMENT D'APPLICATION MOBILE</span>
                 
             </li>
             <li >         
-                <div>
+                <div class="mots">
                     <img alt="" src="../assets/reseaux.jpg">
                 </div>
                 <span>RESEAUX ET ADMINISTRATION RESEAU</span>
@@ -119,6 +119,35 @@
             </li>
         </ul>
         </div>
+    </section>
+    <section>
+        <div class="contact-form">
+        <h2 class="form-title">Laissez-nous un message</h2>
+  <form>
+ 
+    <div class="form-group">
+      <label for="name">Nom</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="firstname">Prénom</label>
+      <input type="text" id="firstname" name="firstname" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="subject">Objet</label>
+      <input type="text" id="subject" name="subject" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Envoyer</button>
+  </form>
+</div>
     </section>
 </div>
 </template>
@@ -256,6 +285,7 @@ ul {
     padding: 0 8%;
      /* background-color: rgba(0, 0, 0, 0.5); */
      margin-top: 10px;
+
 }
   
 .about ul {
@@ -292,6 +322,70 @@ span{
     font-weight: bold;
 
 }
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #353333;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 0px;
+}
 
+.form-title {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #f8f8f8;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #2CC1D5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #2CC1D5;
+}
+.mots{
+      
+    background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      display: flex;
+      align-items: center;
+    
+}
 
 </style>
