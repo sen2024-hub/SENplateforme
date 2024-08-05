@@ -331,7 +331,7 @@ export default {
   padding: 40px 50px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
+  margin: auto;
 }
 
 .form-title {

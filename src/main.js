@@ -3,8 +3,9 @@ import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router';
 import HelloWorld from './components/HelloWorld.vue';
 import Page from './components/vitrinePage.vue';
-import Page1 from './components/vitrinePage1.vue';
-import Page2 from './components/COMPTE.vue';
+import vitrine from './components/vitrinePage1.vue';
+import inscription from './components/COMPTE.vue';
+import connecter from './components/PageConnexion.vue';
 
 const routes = [
 {
@@ -14,10 +15,13 @@ const routes = [
     path: '/vitrinePage', component:Page
 },
 {
-    path: '/vitrinePage1', component:Page1
+    path: '/vitrinePage1', component:vitrine
 },
 {
-    path: '/', component:Page2
+    path: '/COMPTE', component:inscription
+},
+{
+    path: '/', component:connecter
 },
 ]
 const router = createRouter({
