@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HelloWorld from './components/HelloWorld.vue';
 import Page from './components/vitrinePage.vue';
 import Page1 from './components/vitrinePage1.vue';
+import Page2 from './components/COMPTE.vue';
 
 const routes = [
 {
@@ -13,7 +14,10 @@ const routes = [
     path: '/vitrinePage', component:Page
 },
 {
-    path: '/', component:Page1
+    path: '/vitrinePage1', component:Page1
+},
+{
+    path: '/', component:Page2
 },
 ]
 const router = createRouter({
