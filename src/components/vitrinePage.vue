@@ -102,7 +102,7 @@
 </div>
 </div>
 </template>
-<style>
+<style scoped>
 body{
 width: 100%;
 position: absolute;
