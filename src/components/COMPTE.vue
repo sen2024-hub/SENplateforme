@@ -1,29 +1,29 @@
 <template>
-  <div class="registration-form">
+  <div class="registration-form" @submit.prevent="createAcount" id="signup-form">
     <h2 class="form-title">Inscription</h2>
     <form>
       <div class="form-group">
-        <div class="profile-picture-container">
+        <!-- <div class="profile-picture-container">
           <div class="input-field">
             <label for="photoProfil"> Photo de profil </label>
             <input class="box" type="file" id="photoProfil" accept="image/*" @change="onFileSelected2" required>
             <img class="affiche" :src="selectedImageURL2" v-if="selectedImage2">
           </div>
-        </div>
+        </div> -->
         <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" v-model="nom" required>
       </div>
       <div class="form-group">
         <label for="firstname">Prénom :</label>
-        <input type="text" id="firstname" name="firstname" required>
+        <input type="text" id="firstname" name="firstname" v-model="prenom"  required>
       </div>
       <div class="form-group">
         <label for="birthdate">Date de naissance :</label>
-        <input type="date" id="birthdate" name="birthdate" required>
+        <input type="date" id="birthdate" name="birthdate" v-model="date_de_naissance"  required>
       </div>
       <div class="form-group">
         <label for="birthplace">Lieu de naissance :</label>
-        <input type="text" id="birthplace" name="birthplace" required>
+        <input type="text" id="birthplace" name="birthplace" v-model="lieu_de_naissance"  required>
       </div>
       <label for="gender" class="required">Sexe :</label>
     <select id="gender" name="gender" required>
@@ -34,7 +34,7 @@
     </select>
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
+        <input type="text" id="email" name="email" v-model="email"  required>
       </div>
    
       <!-- <div class="form-group">
@@ -257,7 +257,7 @@
         <option value="+234">+234 (Nigeria)</option>
         <option value="+254">+254 (Kenya)</option>
       </select>
-      <input type="tel" id="phone-number" placeholder="Entrez votre numéro">
+      <input type="tel" id="phone-number"  v-model="numero"  placeholder="Entrez votre numéro">
     </div>
       </div>
       
@@ -273,11 +273,7 @@
     </select>
       <div class="form-group">
         <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <div class="form-group">
-        <label for="confirm_password">Confirmation du mot de passe :</label>
-        <input type="password" id="confirm_password" name="confirm_password" required>
+        <input type="password" id="password" name="password" v-model="password"  required>
       </div>
       <label>
       <input type="checkbox" name="terms" required> J'accepte les termes et conditions générales d'utilisation*
@@ -288,8 +284,7 @@
 </template>
 
 <script>
-
-
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -302,6 +297,28 @@ export default {
       this.selectedImage2 = event.target.files[0];
       this.fileName3 = this.selectedImage2.name;
       this.selectedImageURL2 = URL.createObjectURL(this.selectedImage2);
+    },
+    async createAcount() {
+      try {
+        const response = await axios.post('http://localhost:3000/signup', {
+          nom: this.nom,
+          prenom: this.prenom,
+          date_de_naissance: this.date_de_naissance,
+          lieu_de_naissance: this.lieu_de_naissance,
+          email: this.email,
+          numero: this.numero,
+          password: this.password,
+          confirmation_du_password: this.prenom,
+
+         
+        });
+        this.$router.push('/');
+        
+        console.log(response.data.message);
+      } catch (error) {
+        
+        console.log('echec');
+      }
     },
   }
 }

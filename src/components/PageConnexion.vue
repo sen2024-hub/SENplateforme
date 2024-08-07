@@ -1,84 +1,156 @@
 <template>
-    <div class="registration-form">
-        <h2 class="form-title">Inscription</h2>
+    <div class="registration-form" @submit.prevent="login" id="signup-form">
+        <h2 class="form-title">Connexion</h2>
         <form>
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <div class="form-group">
-        <label for="confirm_password">Confirmation du mot de passe :</label>
-        <input type="password" id="confirm_password" name="confirm_password" required>
-      </div>
-      <p>Pas de compte?</p>
-	<div class="inscription">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" v-model="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" v-model="password" required>
+            </div>
+            <p>pas de compte?</p>
+            <div class="inscription">
 	<router-link to="/COMPTE" style="text-decoration: none; color: #465375">s'inscrire</router-link>
 </div>
-</form>
-</div>
+            <button type="submit" class="submit-btn">Se connecter</button>
+        </form>
+        <p v-if="error" class="error">{{ error }}</p>
+    </div>
 </template>
-<style>
+
+<script>
+import axios from 'axios';
+export default {
+    data() {
+        return {
+            email: '',
+            password: '',
+            error: ''
+        }
+    },
+    methods: {
+        async login() {
+            try {
+                const response = await axios.post('http://localhost:3000/login', {
+                    email: this.email,
+                    password: this.password
+                });
+
+                localStorage.setItem('token', response.data.token);
+                console.log('token');
+                this.$router.push('/vitrinePage1');
+                // Redirect the user to a protected route or do something else
+            } catch (error) {
+                this.error = error.response.data.message;
+            }
+        }
+    }
+}
+</script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.box {
+    font-size: 15px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    outline: none;
+}
+
+.affiche {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
 .registration-form {
-  max-width: 500px;
-  width: 100%;
-  background-color: #fff;
-  padding: 40px 50px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  margin: auto;
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: auto;
 }
 
 .form-title {
-  text-align: center;
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 30px;
-  color: #333;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
 }
 
 .form-group {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 label {
-  display: block;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 5px;
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
 }
 
 input,
 select {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  background-color: #f7f7f7;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f7f7f7;
 }
 
-
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2bc9e5;
+}
 
 .submit-btn {
-  display: block;
-  width: 100%;
-  padding: 12px 20px;
-  font-size: 18px;
-  font-weight: 500;
-  background-color: #2bc9e5;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #2bc9e5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .submit-btn:hover {
-  background-color: #2bc9e5;
+    background-color: #2bc9e5;
+}
+
+.profile-picture-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+.form-group1 {
+    margin-bottom: 25px;
+    display: flex;
 }
 </style>

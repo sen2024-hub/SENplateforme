@@ -15,13 +15,13 @@ const routes = [
     path: '/vitrinePage', component:Page
 },
 {
-    path: '/vitrinePage1', component:vitrine
+    path: '/', component:vitrine
 },
 {
     path: '/COMPTE', component:inscription
 },
 {
-    path: '/', component:connecter
+    path: '/PageConnexion', component:connecter
 },
 ]
 const router = createRouter({
