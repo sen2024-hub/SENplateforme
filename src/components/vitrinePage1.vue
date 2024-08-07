@@ -1,333 +1,334 @@
 <template>
-  <section class="partie1">
-    <div>
+  <div class="container">
+    <section>
       <nav>
-        <p
-          style="font-size: 24px;font-weight: bold;margin-left: 50px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-          <span style="color: #2CC1D5;font-family: inter;">Charis</span>Action </p>
+        <h3><span>Charis</span>Action</h3>
         <ul>
-
-          <li><router-link to="/"
-              style="text-decoration: none; color:black;list-style: none; font-size: 16px;font-weight: bold; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Home</router-link>
-          </li>
-          <li><router-link to="/"
-              style="text-decoration: none; color: black;list-style: none; font-size: 16px;font-weight: bold; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Formations</router-link>
-          </li>
-          <li><router-link to="/"
-              style="text-decoration: none; color: black;list-style: none; font-size: 16px;font-weight: bold; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">A
-              propos</router-link></li>
-          <li><router-link to="/"
-              style="text-decoration: none; color: black;list-style: none; font-size: 16px;font-weight: bold; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Contact</router-link>
-          </li>
-
+          <li><router-link class="menu" to="/">Home</router-link></li>
+          <li><router-link class="menu" to="/">Formations</router-link></li>
+          <li><router-link class="menu" to="/">Apropos</router-link></li>
+          <li><router-link class="menu" to="/">Contact</router-link></li>
         </ul>
       </nav>
-    </div>
-
-    <div class="image1">
-      <img alt="" src="../assets/contactus-banner-bg.jpg">
-      <div class="overlay">
-        <h2
-          style="color: white; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 40px;font-weight: bold;">
-          Faites De L'Informatique:<br>
-          Votre Alié,<span style="color: #2CC1D5;">Au Quotidien</span>
-        </h2>
-        <h3 style="font-family:inter; font-size: 24px;font-weight: bold;">Decouvrez L'Expertise D'un Leader En
-          Informatique.<br>
-          Formations Completes D'infographie , Programmation ,<br> Design , Maintenance et bien d'autre.
-        </h3>
-      </div>
-    </div>
-    <div class="bouton1">
-
-      <router-link
-        style="text-decoration: none; color: white;list-style: none;  transform: translateY(30%); font-size: 24px; font-family: inter; font-weight: bold;">Inscrivez-Vous
-        Dès Aujourd'hui !</router-link>
-    </div>
-  </section>
-  <div class="message">
-
-    <p id="formation"><span id="span1">Notre Engagement:</span><br>
-      Une Formation De Qualite et de Confiance
-
-    </p>
-  </div>
-  <section class="partie2">
-
-    <div class="image2">
-      <img alt="" src="../assets/belle.png">
-    </div>
-    <div class="message1">
-      <div class="nous">
-        <p id="titre">NOTRE EXPERTISE💡</p>
-      </div>
-      <p id="message2"> Sur notre plateforme,nous ne nous contentons pas de vous instruire;nous créons
-        des examins qui viserons à evaluer votre niveau et votre avancement au cours de votre apprentissage.</p>
-      <p id="message2">Nous vous accompagnons dans l'obtention de vos different diplome,de votre parcours scolaire et
-        même sociale.<br></p>
-      <div class="bouton2">
-        <router-link
-          style="text-decoration: none; color: white;list-style: none;  transform: translateY(30%); font-size: 24px; font-family: inter; font-weight: bold;">Inscrivez-Vous
-          Dès Aujourd'hui !</router-link>
-      </div>
-    </div>
-    <section class="partie3">
-      <div class="formons">
-        <h2 style="font-size: 30px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-">NOS <span
-            style="color: #2CC1D5; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-">FORMATIONS</span></h2>
-        <p>Engagez-vous vers un avenir prospere</p>
-      </div>
-      <div class="about">
-        <ul>
-
-          <li>
-
-            <div class="mots">
-              <img alt="" src="../assets/gestion de projet.jpg">
-            </div>
-
-            <span>GESTION DES PROJETS INFORMATIQUE</span>
-
-          </li>
-          <li>
-
-            <div class="mots">
-              <img alt="" src="../assets/developpement-site-web.jpg">
-            </div>
-            <span>CONCEPTION ET DEVELOPPEMNT D'APPLICATION WEB</span>
-
-          </li>
-
-          <li>
-            <div class="mots">
-              <img alt="" src="../assets/infographie.png">
-            </div>
-            <span>INFOGRAPHIE ET CREATION MULTIMEDIA</span>
-
-          </li>
-          <li>
-            <div class="mots">
-              <img alt="" src="../assets/conception graphique.jpg">
-            </div>
-            <span>CONCEPTION GRAPHIQUE </span>
-
-          </li>
-          <li>
-            <div class="mots">
-              <img alt="" src="../assets/app mobile.jpg">
-            </div>
-            <span>CONCEPTION ET DEVELOPPEMENT D'APPLICATION MOBILE</span>
-
-          </li>
-          <li>
-            <div class="mots">
-              <img alt="" src="../assets/reseaux.jpg">
-            </div>
-            <span>RESEAUX ET ADMINISTRATION RESEAU</span>
-
-          </li>
-        </ul>
+      <div class="head">
+        <div class="overlay">
+          <div class="text2"></div>
+          <div class="text">
+            <h2>
+              Faites De L'Informatique:<br>
+              Votre Alié,<span>Au Quotidien</span>
+            </h2>
+            <h3>Decouvrez L'Expertise D'un Leader En
+              Informatique.<br>
+              Formations Completes D'infographie , Programmation ,<br> Design , Maintenance et bien d'autre.
+            </h3>
+            <router-link class="btn">Inscrivez-Vous
+              Dès Aujourd'hui !</router-link>
+          </div>
+        </div>
       </div>
     </section>
-
-  </section>
+    <section class="sect2">
+      <h2 id="message"><span id="span1">Notre Engagement:</span><br>
+        Une Formation De Qualite et de Confiance
+      </h2>
+      <div class="s_part">
+        <img alt="" src="../assets/belle.png">
+        <div class="s_text">
+          <p> Sur notre plateforme,nous ne nous contentons pas de vous instruire;nous créons
+            des examins qui viserons à evaluer votre niveau et votre avancement au cours de votre apprentissage.</p>
+          <p style="margin-bottom: 50px;">Nous vous accompagnons dans l'obtention de vos different diplome,de votre
+            parcours scolaire
+            et
+            même sociale.<br></p>
+          <router-link class="btn">Inscrivez-Vous
+            Dès Aujourd'hui !</router-link>
+        </div>
+      </div>
+    </section>
+    <section class="partie3">
+      <h2 class="title">NOS <span>FORMATIONS</span></h2>
+      <div class="partie3_1">
+        <h2>GESTION DES PROJETS INFORMATIQUE</h2>
+        <h2>CONCEPTION ET DEVELOPPEMNT D'APPLICATION WEB</h2>
+        <h2>INFOGRAPHIE ET CREATION MULTIMEDIA</h2>
+      </div>
+      <h3>Engagez-vous vers un avenir prospere</h3>
+      <div class="partie3_2">
+        <h2>CONCEPTION GRAPHIQUE </h2>
+        <h2>CONCEPTION ET DEVELOPPEMENT D'APPLICATION MOBILE</h2>
+        <h2>RESEAUX ET ADMINISTRATION RESEAU</h2>
+      </div>
+    </section>
+    <section class="partie4">
+      <div class="partie4_2">
+        <img src="" alt="">
+        <div class="textL">
+          <h2>QUI NOUS SOMMES? <br>
+            <p>
+              Nous sommes une structurequi x’est donnee pour mission de former les leader de demain dans les domaines
+              cles
+              de l’informatiques et de la technologie.Que vous souhaitez vous epanouir en tant que developpeur de
+              logiciels,
+              concepteurs web ou encore infographe ,notre equipe d’expert vous accompagneras tout au long de votre
+              parcours
+              VIVEZ UNE EXPERIENCE NOUVELLE AVEC NOUS
+            </p>
+          </h2>
+          <router-link class="btn">Voir plus</router-link>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 <style>
-.partie1 {
-  width: 95%;
+.container {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  width: 85%;
   margin: auto;
-  /* background-color: red; */
+}
+
+section {
+  width: 100%;
+  margin-top: 50px;
 }
 
 nav {
-  display: flex;
   width: 100%;
+  display: flex;
   justify-content: space-between;
-  align-items: center;
-
-}
-
-li {
-  text-decoration: none;
-  list-style: none;
-  padding-right: 60px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
 }
 
 ul {
-  width: 40%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
+}
+
+li {
+  list-style: none;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.menu {
+  color: rgba(0, 0, 0, 0.9);
+  text-decoration: none;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-
 }
 
-.navi {
-
-  background-color: white;
-  margin: 5px;
-  font-size: 20px;
-  font-family: 'Times New Roman', Times, serif;
-
-
+nav h3 {
+  color: black;
 }
 
-.image1 img {
+nav h3 span {
+  font-weight: bold;
+  color: #2CC;
+}
+
+.head {
   width: 100%;
+  background-image: url(../assets/contactus-banner-bg.jpg);
+  height: 90vh;
+  background-position: center;
+  background-size: cover;
+
 }
 
 .overlay {
-  position: absolute;
-  top: 85%;
-  left: 400px;
-  transform: translate(-50%, -50%);
-  /* background-color: rgba(0, 0, 0, 0.4); */
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 90vh;
+  display: block;
+}
+
+.text2 {
+  height: 20vh;
+  width: 100%;
+  background-color: transparent;
+}
+
+.text {
+  width: 50%;
+  text-align: left;
+  margin-left: 60px;
+
+}
+
+.text h2 {
+  font-size: 35px;
   color: white;
-  padding: 20px;
-  text-align: left;
 }
 
-.bouton1 {
-  margin-top: 30%;
+.text h2 span {
+  font-size: 30px;
+  color: #2CC;
+
+}
+
+.text h3 {
+  font-size: 20px;
+  color: rgb(222, 224, 224);
+  margin-top: -30px;
+  margin-bottom: 60px;
+}
+
+.overlay .btn {
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 17px;
+  text-decoration: none;
+  color: white;
+  background: #2CC;
   border-radius: 50px;
-  background-color: #2CC1D5;
-  width: 450px;
-  height: 90px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  margin-left: 450px;
-  transform: translateY(-690px);
-
-
 }
 
-#formation {
-  transform: translateY(-510px);
+#message {
+  width: 50%;
   text-align: left;
-  margin: 3%;
-  font-weight: bold;
-  font-size: 24px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 25px;
 }
 
-#span1 {
-
-  font-size: 40px;
-  font-weight: bold;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #2CC1D5;
+#message span {
+  color: #2CC;
+  font-size: 35px;
 }
 
-.image2 img {
-  transform: translateY(-510px);
-  margin: 3%;
-  width: 650px;
-
-}
-
-.image2 {
+.s_part {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80vh;
+  background-color: rgba(0, 0, 0, 0.89);
 }
 
-.message1 {
+.s_part img {
+  width: 45% !important;
+}
+
+.s_text {
+  width: 50%;
+  text-align: left;
+}
+
+.s_text p {
+  font-size: 25px;
+  color: white;
+}
+
+.s_text .btn {
   background-color: black;
-  width: 773px;
-  height: 976px;
-  transform: translateY(-510px);
-  margin: 3%;
-  position: absolute;
-  top: 1794px;
-  right: 0;
-
-}
-
-#message2 {
-  color: white;
-  font-size: 25px;
-  font-family: 'Times New Roman', Times, serif;
-  text-indent: 10px;
-  margin: 60px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-
-}
-
-#titre {
-  color: gold;
-  font-size: 25px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-}
-
-.bouton2 {
-  /* margin-top: 30%; */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 17px;
+  text-decoration: none;
+  color: black;
+  background: white;
+  margin-top: 50px;
   border-radius: 50px;
-  background-color: #2CC1D5;
-  width: 450px;
-  height: 90px;
+}
+
+.sect2 {
+  display: block;
+}
+
+.partie3 {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+
+.partie3 .title {
+  color: black;
+  font-size: 40px;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  transform: translateY(90%);
-  margin: 150px;
 }
 
-.about {
-  margin: 25px auto;
-  padding: 0 8%;
-  /* background-color: rgba(0, 0, 0, 0.5); */
-  margin-top: 10px;
-  transform: translateY(-510px);
-
+.partie3 .title span {
+  color: #2CC;
 }
 
-.about ul {
-  display: flex;
-  flex-wrap: wrap;
+.partie3 h3 {
+  color: black;
+  font-size: 30px;
+}
+
+.partie3_1 {
   width: 100%;
-}
-
-.about li {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 3%;
-  transition: 0.5s;
-  height: 300px;
-  width: 28%;
-  margin-left: 0.0px;
-  margin-bottom: 0.0px;
+  justify-content: space-between;
 }
 
-.about li div {
+.partie3_2 {
   width: 100%;
-  height: 60%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.about li div img {
-  height: 100%;
+.partie3_1 h2 {
+  width: 27%;
+  background-color: #2CC;
+  font-size: 25px;
+  padding: 60px 0;
+  color: white;
+}
+
+.partie3_2 h2 {
+  width: 27%;
+  background-color: #2CC;
+  font-size: 25px;
+  padding: 60px 0;
+  color: white;
+}
+
+.partie4 {
+  display: block;
   width: 100%;
+  height: 100vh;
 }
 
-span {
-  margin-top: 5px;
-  font-family: 'Times New Roman', Times, serif;
+.partie4 .partie4_1 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  background-color: green;
+}
+
+.partie4 .partie4_2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+
+.partie4 .partie4_2 img {
+  width: 45%;
+  height: 85vh;
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 8vh;
+}
+.partie4_2 .textL{
+  text-align: left;
+  font-size: 35px;
+  width: 50%;
+  color: #2CC;
+  margin-top: 20vh;
+}
+.partie4_2 p{
+  font-size: 15px;
+  color: black;
+}
+.partie4 .btn {
+  background-color: black;
+  font-size: 20px;
   font-weight: bold;
-
-}
-
-.formons {
-  transform: translateY(-510px);
-}
-p{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 24px;
-  font-weight: bold;
+  padding: 20px 50px;
+  text-decoration: none;
+  color: white;
+  margin-top: 50px;
+  border-radius: 50px;
 }
 </style>
