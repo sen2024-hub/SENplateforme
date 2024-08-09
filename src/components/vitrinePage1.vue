@@ -5,7 +5,17 @@
         <h3><span>Charis</span>Action</h3>
         <ul>
           <li><router-link class="menu" to="/">Home</router-link></li>
-          <li><router-link class="menu" to="/">Formations</router-link></li>
+          <li class="dropdown">
+  <a href="#" class="menu">Formation</a>
+  <ul class="dropdown-menu">
+    <li><a href="/gestion-de-projets-informatique">Gestion des projets informatiques</a></li>
+    <li><a href="/conception-et-developpement-web">Conception et développement d'applications web</a></li>
+    <li><a href="/infographie-et-creation-multimedia">Infographie et création multimédia</a></li>
+    <li><a href="/conception-graphique">Conception graphique</a></li>
+    <li><a href="/conception-et-developpement-mobile">Conception et développement d'applications mobiles</a></li>
+    <li><a href="/reseau-et-administration">Réseau et administration réseau</a></li>
+  </ul>
+</li>
           <li><router-link class="menu" to="/">Apropos</router-link></li>
           <li><router-link class="menu" to="/">Contact</router-link></li>
         </ul>
@@ -62,16 +72,16 @@
     </section>
     <section class="partie4">
       <div class="partie4_2">
-        <img src="" alt="">
+        <img src="../assets/code.jpg" alt="">
         <div class="textL">
-          <h2>QUI NOUS SOMMES? <br>
+          <h2>QUI SOMMES NOUS? <br>
             <p>
-              Nous sommes une structurequi x’est donnee pour mission de former les leader de demain dans les domaines
-              cles
+              Nous sommes une structurequi c’est donnée pour mission de former les leaders de demain dans les domaines
+              clés
               de l’informatiques et de la technologie.Que vous souhaitez vous epanouir en tant que developpeur de
               logiciels,
               concepteurs web ou encore infographe ,notre equipe d’expert vous accompagneras tout au long de votre
-              parcours
+              parcours<br>
               VIVEZ UNE EXPERIENCE NOUVELLE AVEC NOUS
             </p>
           </h2>
@@ -79,9 +89,82 @@
         </div>
       </div>
     </section>
+    <section class="partie5">
+      <h2 class="form-title">Laissez-nous un message</h2>
+      <p id="form-texte"> vous pouvez egalement remplir le formulaire Ci-<br>dessous et nous vous recontacterons<br> dans les 
+        brefs delais </p>
+      <div class="contact-form">
+      
+<form>
+
+  <div class="form-group">
+    <label for="name">Nom</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="firstname">Prénom</label>
+    <input type="text" id="firstname" name="firstname" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+  <div class="form-group">
+    <label for="subject">Objet</label>
+    <input type="text" id="subject" name="subject" required>
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
+  <button type="submit" class="submit-btn">Envoyer</button>
+</form>
+</div>
+</section>
+<section class="partie6" >
+  <footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <div class="footer-section">
+        
+        <ul>
+          <li><a href="#">Home</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+
+        <ul>
+          <li><a href="#">Formations</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-section">
+        
+        <ul>
+          <li><a href="#">A propos</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        
+        <ul>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p>&copy; 2024 <span>Charis</span>Action. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom" style="background-color: whitesmoke;">
+  <p>polique de confidentialite </p>
+  <p>polique de confidentialite</p>
+  <p>&copy; 2024 <span>Charis</span>Action. Tous droits réservés.</p>
+</div>
+</section>
   </div>
 </template>
-<style>
+<style scoped>
 .container {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
   width: 85%;
@@ -330,5 +413,195 @@ nav h3 span {
   color: white;
   margin-top: 50px;
   border-radius: 50px;
+}
+
+.contact-form {
+max-width: 600px;
+margin: 0 auto;
+padding: 30px;
+background-color: #2CC;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+margin-top: 0px;
+}
+
+.form-title {
+text-align: center;
+color: black;
+margin-bottom: 30px;
+font-size: 40px;
+font-family: tiro Devanagari Hindi;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+label {
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+color: #f8f8f8;
+}
+
+input, textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 4px;
+font-size: 16px;
+background-color: white;
+}
+
+textarea {
+resize: vertical;
+}
+
+.submit-btn {
+display: block;
+width: 100%;
+padding: 12px 20px;
+background-color: black;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+}
+
+.submit-btn:hover {
+background-color: #2CC;
+}
+.mots{
+    
+  background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+}
+#form-texte{
+  font-size: 24px;
+  font-family: tiro Devanagari Hindi;
+}
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 80%;
+}
+
+.footer-section {
+  flex-basis: 30%;
+  margin-right: 30px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #ccc;
+}
+
+.footer-right {
+  text-align: right;
+  font-size: 14px;
+}
+span{
+  color: #2CC;
+  
+}
+.footer-bottom {
+  background-color: whitesmoke;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom p:first-child {
+  text-align: left;
+}
+
+.footer-bottom p:last-child {
+  text-align: right;
+}
+/* Styles pour la liste déroulante */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background-color: rgb(133, 138, 138);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 </style>
