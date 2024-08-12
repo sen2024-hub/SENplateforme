@@ -193,6 +193,10 @@ li {
   font-weight: bold;
   font-size: 19px;
 }
+li:hover{
+    background-color: rgba(13, 190, 167, 0.1);
+    cursor: pointer;
+}
 
 .menu {
   color: rgba(0, 0, 0, 0.9);
@@ -579,7 +583,7 @@ span{
   display: none;
   position: absolute;
   background-color: whitesmoke;
-  min-width: 200px;
+  min-width: 600px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   padding: 0;
@@ -604,4 +608,5 @@ span{
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
 </style>

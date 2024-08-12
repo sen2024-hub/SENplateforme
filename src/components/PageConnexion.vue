@@ -11,9 +11,7 @@
                 <input type="password" id="password" name="password" v-model="password" required>
             </div>
             <p>pas de compte?</p>
-            <div class="inscription">
-	<router-link to="/COMPTE" style="text-decoration: none; color: #465375">s'inscrire</router-link>
-</div>
+            <a href="/COMPTE">creer un compte</a>
             <button type="submit" class="submit-btn">Se connecter</button>
         </form>
         <p v-if="error" class="error">{{ error }}</p>
@@ -152,5 +150,9 @@ select:focus {
 .form-group1 {
     margin-bottom: 25px;
     display: flex;
+}
+a{
+    text-decoration: none;
+    color: darkslateblue;
 }
 </style>

@@ -70,6 +70,47 @@ Développer une démarche d'apprentissage continu et d'amélioration continue.</
     </div>
   </div>
   </section>
+  <section class="partie6" >
+  <footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <div class="footer-section">
+        
+        <ul>
+          <li><a href="#">Home</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+
+        <ul>
+          <li><a href="#">Formations</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-section">
+        
+        <ul>
+          <li><a href="#">A propos</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        
+        <ul>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p>&copy; 2024 <span>Charis</span>Action. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom" style="background-color: whitesmoke;">
+  <p>polique de confidentialite </p>
+  <p>polique de confidentialite</p>
+  <p>&copy; 2024 <span>Charis</span>Action. Tous droits réservés.</p>
+</div>
+</section>
     </div>
     
 </template>
@@ -174,5 +215,87 @@ color: #2cc;
 p{
   font-size: 24px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 80%;
+}
+
+.footer-section {
+  flex-basis: 30%;
+  margin-right: 30px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #ccc;
+}
+
+.footer-right {
+  text-align: right;
+  font-size: 14px;
+}
+.footer-right p{
+  font-size: 14px;
+}
+span{
+  color: #2CC;
+  
+}
+.footer-bottom {
+  background-color: whitesmoke;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-bottom p:first-child {
+  text-align: left;
+}
+
+.footer-bottom p:last-child {
+  text-align: right;
 }
 </style>
