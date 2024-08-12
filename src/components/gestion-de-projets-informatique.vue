@@ -8,10 +8,6 @@
     <h2 class="titre">Présentation de la formation</h2>
     <div class="section-content">
       <p>
-Voici un texte de présentation pour une formation en gestion des projets informatiques :
-
-Présentation de la Formation en Gestion des Projets Informatiques
-
 La gestion de projets informatiques est une compétence essentielle dans le monde numérique d'aujourd'hui. Cette formation a pour objectif de fournir aux participants les connaissances et les outils nécessaires pour planifier, exécuter, et superviser des projets informatiques de manière efficace et efficiente. Au cours de cette formation, les apprenants acquerront une compréhension approfondie des méthodologies de gestion de projets, telles que l'Agile, le Scrum, et le Waterfall, ainsi que des compétences en leadership, communication, et résolution de problèmes spécifiques aux environnements technologiques.<br><br>
 
 Les participants apprendront à identifier les besoins des clients, à définir des objectifs clairs, à gérer les ressources, et à surveiller l'avancement des projets tout en respectant les délais et les budgets. Des études de cas réels et des ateliers pratiques permettront d'ancrer les concepts théoriques dans des situations concrètes, offrant ainsi une expérience d'apprentissage complète et immersive. À l'issue de cette formation, les participants seront en mesure de prendre en charge des projets informatiques complexes et de conduire leur équipe vers le succès.</p>
@@ -64,7 +60,7 @@ Savoir évaluer et sélectionner les projets les plus pertinents
    
     <div class="section-content">
        
-      <a href="#" class="button">S'inscrire</a>
+      <a href="/inscriptionPage" class="button">S'inscrire</a>
     </div>
   </div>
   </section>

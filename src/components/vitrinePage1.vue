@@ -16,8 +16,8 @@
     <li><a href="/reseau-et-administration">Réseau et administration réseau</a></li>
   </ul>
 </li>
-          <li><router-link class="menu" to="/">Apropos</router-link></li>
-          <li><router-link class="menu" to="/">Contact</router-link></li>
+          <li><router-link class="menu" to="/">se connecter</router-link></li>
+          <li><router-link class="menu" to="/">se deconnecter</router-link></li>
         </ul>
       </nav>
       <div class="head">
@@ -32,7 +32,7 @@
               Informatique.<br>
               Formations Completes D'infographie , Programmation ,<br> Design , Maintenance et bien d'autre.
             </h3>
-            <router-link class="btn">Inscrivez-Vous
+            <router-link to="/inscriptionPage" class="btn">Inscrivez-Vous
               Dès Aujourd'hui !</router-link>
           </div>
         </div>
@@ -51,7 +51,7 @@
             parcours scolaire
             et
             même sociale.<br></p>
-          <router-link class="btn">Inscrivez-Vous
+          <router-link to="/inscriptionPage" class="btn">Inscrivez-Vous
             Dès Aujourd'hui !</router-link>
         </div>
       </div>
@@ -93,29 +93,29 @@
       <h2 class="form-title">Laissez-nous un message</h2>
       <p id="form-texte"> vous pouvez egalement remplir le formulaire Ci-<br>dessous et nous vous recontacterons<br> dans les 
         brefs delais </p>
-      <div class="contact-form">
+      <div class="contact-form" @submit.prevent="comment">
       
 <form>
 
-  <div class="form-group">
+  <div class="form-group" >
     <label for="name">Nom</label>
-    <input type="text" id="name" name="name" required>
+    <input type="text" id="name" name="name" v-model="nom" required>
   </div>
   <div class="form-group">
     <label for="firstname">Prénom</label>
-    <input type="text" id="firstname" name="firstname" required>
+    <input type="text" id="firstname" name="firstname" v-model="prenom" required>
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+    <input type="email" id="email" name="email" v-model="email" required>
   </div>
   <div class="form-group">
     <label for="subject">Objet</label>
-    <input type="text" id="subject" name="subject" required>
+    <input type="text" id="subject" name="subject" v-model="objet" required>
   </div>
   <div class="form-group">
     <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+    <textarea id="message" name="message" rows="5"  v-model="message" required></textarea>
   </div>
   <button type="submit" class="submit-btn">Envoyer</button>
 </form>
@@ -164,6 +164,46 @@
 </section>
   </div>
 </template>
+
+<script>
+import axios from 'axios';
+export default {
+  // data() {
+  //   return {
+  //     selectedImageURL2: null,
+  //     selectedImage2: null,
+  //   }
+  // },
+  methods: {
+    // onFileSelected2(event) {
+    //   this.selectedImage2 = event.target.files[0];
+    //   this.fileName3 = this.selectedImage2.name;
+    //   this.selectedImageURL2 = URL.createObjectURL(this.selectedImage2);
+    // },
+    async comment() {
+      try {
+        const response = await axios.post('http://localhost:3000/comment', {
+          nom: this.nom,
+          prenom: this.prenom,
+          email: this.email,
+          objet: this.objet,
+          message: this.message,
+         
+
+         
+        });
+         this.$router.push('/');
+        
+        console.log(response.data.message);
+      } catch (error) {
+        
+        console.log('echec');
+      }
+    },
+  }
+}
+</script>
+
 <style scoped>
 .container {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
@@ -474,7 +514,7 @@ font-size: 16px;
 }
 
 .submit-btn:hover {
-background-color: #2CC;
+background-color: rgb(173, 170, 170);
 }
 .mots{
     

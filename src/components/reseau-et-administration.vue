@@ -83,7 +83,7 @@ Réseaux de nouvelle génération (SDN, NFV, etc.)<br>
    
     <div class="section-content">
        
-      <a href="#" class="button">S'inscrire</a>
+      <a href="/inscriptionPage" class="button">S'inscrire</a>
     </div>
   </div>
   </section>

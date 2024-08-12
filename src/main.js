@@ -2,7 +2,6 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router';
 import HelloWorld from './components/HelloWorld.vue';
-import Page from './components/vitrinePage.vue';
 import vitrine from './components/vitrinePage1.vue';
 import inscription from './components/COMPTE.vue';
 import connecter from './components/PageConnexion.vue';
@@ -13,13 +12,12 @@ import infographie from './components/infographie-et-creation-multimedia.vue';
 import design from './components/conception-graphique.vue';
 import mobile from './components/conception-et-developpement-mobile.vue';
 import reseau from './components/reseau-et-administration.vue';
+import inscrire from './components/inscriptionPage.vue';
 const routes = [
 {
     path: '/hello', component: HelloWorld
 },
-{
-    path: '/vitrinePage', component:Page
-},
+
 {
     path: '/', component:vitrine
 },
@@ -50,6 +48,9 @@ const routes = [
 },
 {
     path: '/reseau-et-administration', component:reseau
+},
+{
+    path: '/inscriptionPage', component:inscrire
 },
 ]
 const router = createRouter({

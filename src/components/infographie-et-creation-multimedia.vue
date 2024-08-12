@@ -66,7 +66,7 @@ Développer une démarche d'apprentissage continu et d'amélioration continue.</
    
     <div class="section-content">
        
-      <a href="#" class="button">S'inscrire</a>
+      <a href="/inscriptionPage" class="button">S'inscrire</a>
     </div>
   </div>
   </section>

@@ -50,7 +50,7 @@ Acquérir ces compétences ouvre de nombreuses perspectives professionnelles pas
      
       <div class="section-content">
          
-        <a href="#" class="button">S'inscrire</a>
+        <a href="inscriptionPage" class="button">S'inscrire</a>
       </div>
     </div>
     </section>
