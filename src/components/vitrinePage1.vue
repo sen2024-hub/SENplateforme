@@ -16,8 +16,8 @@
     <li><a href="/reseau-et-administration">Réseau et administration réseau</a></li>
   </ul>
 </li>
-          <li><router-link class="menu" to="/">se connecter</router-link></li>
-          <li><router-link class="menu" to="/">se deconnecter</router-link></li>
+          <li><router-link class="menu" to="/PageConnexion">Se connecter</router-link></li>
+          <li><router-link class="menu" to="/">Se deconnecter</router-link></li>
         </ul>
       </nav>
       <div class="head">
@@ -193,7 +193,7 @@ export default {
          
         });
          this.$router.push('/');
-        
+        alert(response.data.message)
         console.log(response.data.message);
       } catch (error) {
         

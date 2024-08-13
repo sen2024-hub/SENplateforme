@@ -38,7 +38,7 @@ export default {
 
                 localStorage.setItem('token', response.data.token);
                 console.log('token');
-                this.$router.push('/vitrinePage1');
+                this.$router.push('/');
                 // Redirect the user to a protected route or do something else
             } catch (error) {
                 this.error = error.response.data.message;

@@ -16,8 +16,8 @@
     <li><a href="/reseau-et-administration">Réseau et administration réseau</a></li>
   </ul>
 </li>
-          <li><router-link class="menu" to="/">Apropos</router-link></li>
-          <li><router-link class="menu" to="/">Contact</router-link></li>
+          <li><router-link class="menu" to="/">Se connecter</router-link></li>
+          <li><router-link class="menu" to="/">Se deconnecter</router-link></li>
         </ul>
       </nav>
 

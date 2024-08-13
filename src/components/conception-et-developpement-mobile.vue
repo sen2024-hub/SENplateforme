@@ -171,6 +171,7 @@ margin: auto;
   h1 {
     text-align: center;
     margin-bottom: 30px;
+    
   }
   
   .objective {
@@ -190,14 +191,14 @@ margin: auto;
     line-height: 1.5;
 }
 .conteneur span{
-font-size: 60px;
+font-size: 30px;
 font-weight: bold;
 color: #2cc;
 
 
 }
 .titre{
-font-size: 60px;
+font-size: 30px;
 font-weight: bold;
 color: #2cc;
 }
@@ -208,7 +209,7 @@ text-indent: 50px;
 h1{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 30px;
 color: #2cc;
 
 }

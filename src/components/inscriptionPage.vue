@@ -3,36 +3,14 @@
 <div class="body">
 <div class="form">
     <h1>Inscription à une formation</h1>
-    
-    <div class="form-group">
-      <label for="nom">Nom</label>
-      <input type="text" id="nom" name="nom" required>
-    </div>
-    
-    <div class="form-group">
-      <label for="prenom">Prénom</label>
-      <input type="text" id="prenom" name="prenom" required>
-    </div>
-    
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    
-    <div class="form-group">
+    <div class="form-group" @submit.prevent="formation">
             <label for="cours">formations</label>
             <select id="cours" name="cours" required>
-                <option value="">Sélectionnez une formation</option>
-                <option value="cours1">gestion des projets infformatiques</option>
-                <option value="cours2">conception et developpement d'applications web</option>
-                <option value="cours3">infographie et creation multimedia</option>
-                <option value="cours4">conception graphique</option>
-                <option value="cours5">conception et developpement d'application web</option>
-                <option value="cours6">reseau et administration reseau</option>
+                <option v-for="classes in formations" :key="classes.id" :value="classes.libelle">{{ classes.libelle }}</option> 
             </select>
         </div>
     
-    <button type="submit">S'inscrire</button>
+    <button type="submit">Souscrire</button>
     <router-link to="/" class="btn">annuler</router-link>
 
  </div>
@@ -43,7 +21,8 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #2cc;
+    width: 100%;
+    
   }
   
   .form {
@@ -65,13 +44,7 @@
     margin-bottom: 30px;
   }
   
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  input, select {
+   select {
     width: 100%;
     padding: 16px;
     border: 1px solid #ccc;
@@ -105,3 +78,48 @@
 }
 
 </style>
+
+
+<script>
+import axios from 'axios';
+export default {
+  data(){
+    return {
+      formations: [],
+    }
+  },  
+  mounted(){
+    this.getTypefs();
+  },
+  methods: {
+    async getTypefs() {
+      try {
+        const response = await axios.get('http://localhost:3000/classe'); // Appeler l'API GET
+        this.formations = response.data;
+        console.log(this.formations);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des classe :', error);
+      }
+    },
+    
+    async formation() {
+      try {
+        const response = await axios.post('http://localhost:3000/formation', {
+          // nom: this.nom,
+          // prenom: this.prenom,
+          // email: this.email,
+          // objet: this.objet,
+          // message: this.message,
+          
+        });
+         this.$router.push('/');
+        
+        console.log(response.data.message);
+      } catch (error) {
+        
+        console.log('echec');
+      }
+    },
+  }
+}
+</script>

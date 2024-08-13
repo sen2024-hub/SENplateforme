@@ -106,18 +106,17 @@ export default {
     },
 }
 </script>
-<style scoped>
-.container {
+<style scoped>.container {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
   width: 85%;
   margin: auto;
-}
-.container h1{
+  }
+  .container h1{
       background-color: #333;
       padding: 20px;
       text-align: center;
-}
-.section1 {
+  }
+  .section1 {
       margin-bottom: 40px;
     }
     
@@ -133,8 +132,8 @@ export default {
       line-height: 1.5;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
       font-size: 24px;
-}
-.button {
+  }
+  .button {
       display: inline-block;
       background-color: #333;
       color: #fff;
@@ -155,6 +154,7 @@ export default {
     h1 {
       text-align: center;
       margin-bottom: 30px;
+      
     }
     
     .objective {
@@ -172,114 +172,115 @@ export default {
     .objective p {
       color: #555;
       line-height: 1.5;
-}
- .conteneur span{
-  font-size: 60px;
+  }
+  .conteneur span{
+  font-size: 30px;
   font-weight: bold;
   color: #2cc;
- 
   
-}
-.titre{
-  font-size: 60px;
+  
+  }
+  .titre{
+  font-size: 30px;
   font-weight: bold;
   color: #2cc;
-}
-.section-content p{
+  }
+  .section-content p{
   text-align: justify;
   text-indent: 50px;
-}
-h1{
+  }
+  h1{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 30px;
   color: #2cc;
   
-}
-p{
-  font-size: 24px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-}
-
-footer {
-  background-color: #000;
-  color: #fff;
-  padding: 60px 0;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-left {
-  display: flex;
-  justify-content: flex-end;
-  flex-basis: 80%;
-}
-
-.footer-section {
-  flex-basis: 30%;
-  margin-right: 30px;
-}
-
-.footer-section h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.footer-section ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-  color: #ccc;
-}
-
-.footer-right {
-  text-align: right;
-  font-size: 14px;
-}
-.footer-right p{
-  font-size: 14px;
-}
-span{
-  color: #2CC;
+  }
+  p{
+    font-size: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  }
   
-}
-.footer-bottom {
-  background-color: whitesmoke;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-}
-
-.footer-bottom p {
-  margin: 0;
-  font-size: 14px;
-}
-
-.footer-bottom p:first-child {
-  text-align: left;
-}
-
-.footer-bottom p:last-child {
-  text-align: right;
-}
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-left {
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 80%;
+  }
+  
+  .footer-section {
+    flex-basis: 30%;
+    margin-right: 30px;
+  }
+  
+  .footer-section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #ccc;
+  }
+  
+  .footer-right {
+    text-align: right;
+    font-size: 14px;
+  }
+  .footer-right p{
+    font-size: 14px;
+  }
+  span{
+    color: #2CC;
+    
+  }
+  .footer-bottom {
+    background-color: whitesmoke;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .footer-bottom p:first-child {
+    text-align: left;
+  }
+  
+  .footer-bottom p:last-child {
+    text-align: right;
+  }
 </style>
