@@ -25,6 +25,7 @@ export default {
         return {
             email: '',
             password: '',
+            userId: '',
             error: ''
         }
     },
@@ -35,9 +36,12 @@ export default {
                     email: this.email,
                     password: this.password
                 });
+                const {token, userId } = response.data;
 
-                localStorage.setItem('token', response.data.token);
-                console.log('token');
+                localStorage.setItem('userId', userId);
+                this.token = token;
+                this.userId = userId;
+                console.log(userId);
                 this.$router.push('/');
                 // Redirect the user to a protected route or do something else
             } catch (error) {
