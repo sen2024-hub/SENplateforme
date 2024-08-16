@@ -6,18 +6,23 @@
         <ul>
           <li><router-link class="menu" to="/">Home</router-link></li>
           <li class="dropdown">
-  <a href="#" class="menu">Formation</a>
-  <ul class="dropdown-menu">
-    <li><a href="/gestion-de-projets-informatique">Gestion des projets informatiques</a></li>
-    <li><a href="/conception-et-developpement-web">Conception et développement d'applications web</a></li>
-    <li><a href="/infographie-et-creation-multimedia">Infographie et création multimédia</a></li>
-    <li><a href="/conception-graphique">Conception graphique</a></li>
-    <li><a href="/conception-et-developpement-mobile">Conception et développement d'applications mobiles</a></li>
-    <li><a href="/reseau-et-administration">Réseau et administration réseau</a></li>
-  </ul>
-</li>
-          <li><router-link class="menu" to="/PageConnexion">Se connecter</router-link></li>
-          <li><router-link class="menu" to="/">Se deconnecter</router-link></li>
+            <a href="#" class="menu">Formation</a>
+            <ul class="dropdown-menu">
+              <li><a href="/gestion-de-projets-informatique">Gestion des projets informatiques</a></li>
+              <li><a href="/conception-et-developpement-web">Conception et développement d'applications web</a></li>
+              <li><a href="/infographie-et-creation-multimedia">Infographie et création multimédia</a></li>
+              <li><a href="/conception-graphique">Conception graphique</a></li>
+              <li><a href="/conception-et-developpement-mobile">Conception et développement d'applications mobiles</a>
+              </li>
+              <li><a href="/reseau-et-administration">Réseau et administration réseau</a></li>
+            </ul>
+          </li>
+          <li v-if="isAuthentify === false"><router-link class="menu" to="/PageConnexion">Se connecter</router-link>
+          </li>
+          <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon">Mes cours</router-link>
+          </li>
+            <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/">Se deconnecter</router-link>
+          </li>
         </ul>
       </nav>
       <div class="head">
@@ -91,95 +96,108 @@
     </section>
     <section class="partie5">
       <h2 class="form-title">Laissez-nous un message</h2>
-      <p id="form-texte"> vous pouvez egalement remplir le formulaire Ci-<br>dessous et nous vous recontacterons<br> dans les 
+      <p id="form-texte"> vous pouvez egalement remplir le formulaire Ci-<br>dessous et nous vous recontacterons<br>
+        dans les
         brefs delais </p>
       <div class="contact-form" @submit.prevent="comment">
-      
-<form>
 
-  <div class="form-group" >
-    <label for="name">Nom</label>
-    <input type="text" id="name" name="name" v-model="nom" required>
-  </div>
-  <div class="form-group">
-    <label for="firstname">Prénom</label>
-    <input type="text" id="firstname" name="firstname" v-model="prenom" required>
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" v-model="email" required>
-  </div>
-  <div class="form-group">
-    <label for="subject">Objet</label>
-    <input type="text" id="subject" name="subject" v-model="objet" required>
-  </div>
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5"  v-model="message" required></textarea>
-  </div>
-  <button type="submit" class="submit-btn">Envoyer</button>
-</form>
-</div>
-</section>
-<section class="partie6" >
-  <footer>
-  <div class="footer-container">
-    <div class="footer-left">
-      <div class="footer-section">
-        
-        <ul>
-          <li><a href="#">Home</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
+        <form>
 
-        <ul>
-          <li><a href="#">Formations</a></li>
-          
-        </ul>
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" v-model="nom" required>
+          </div>
+          <div class="form-group">
+            <label for="firstname">Prénom</label>
+            <input type="text" id="firstname" name="firstname" v-model="prenom" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" v-model="email" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Objet</label>
+            <input type="text" id="subject" name="subject" v-model="objet" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" v-model="message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
       </div>
-      <div class="footer-section">
-        
-        <ul>
-          <li><a href="#">A propos</a></li>
-        </ul>
+    </section>
+    <section class="partie6">
+      <footer>
+        <div class="footer-container">
+          <div class="footer-left">
+            <div class="footer-section">
+
+              <ul>
+                <li><a href="#">Home</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+
+              <ul>
+                <li><a href="#">Formations</a></li>
+
+              </ul>
+            </div>
+            <div class="footer-section">
+
+              <ul>
+                <li><a href="#">A propos</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+
+              <ul>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-right">
+            <p>&copy; 2024 <span>Charis</span>Action. Tous droits réservés.</p>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-bottom" style="background-color: whitesmoke;">
+        <p>polique de confidentialite </p>
+        <p>polique de confidentialite</p>
+        <p>&copy; 2024 <span>Charis</span>Action. Tous droits réservés.</p>
       </div>
-      <div class="footer-section">
-        
-        <ul>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-right">
-      <p>&copy; 2024 <span>Charis</span>Action. Tous droits réservés.</p>
-    </div>
-  </div>
-</footer>
-<div class="footer-bottom" style="background-color: whitesmoke;">
-  <p>polique de confidentialite </p>
-  <p>polique de confidentialite</p>
-  <p>&copy; 2024 <span>Charis</span>Action. Tous droits réservés.</p>
-</div>
-</section>
+    </section>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
 export default {
-  // data() {
-  //   return {
-  //     selectedImageURL2: null,
-  //     selectedImage2: null,
-  //   }
-  // },
+  data() {
+    return {
+      selectedImageURL2: null,
+      selectedImage2: null,
+      isAuthentify: false,
+      seConnecter: true,
+    }
+  },
+  created() {
+    const isAuthentify = localStorage.getItem('isAuthentify');
+
+    this.isAuthentify = isAuthentify === 'true';
+  },
   methods: {
-    // onFileSelected2(event) {
-    //   this.selectedImage2 = event.target.files[0];
-    //   this.fileName3 = this.selectedImage2.name;
-    //   this.selectedImageURL2 = URL.createObjectURL(this.selectedImage2);
-    // },
+
+    ifAuthentify() {
+      this.seConnecter = false;
+    },
+    logout() {
+      localStorage.removeItem('userId')
+      localStorage.removeItem('isAuthentify')
+      this.$router.push('/');
+      window.location.reload(); 
+    },
     async comment() {
       try {
         const response = await axios.post('http://localhost:3000/comment', {
@@ -188,15 +206,15 @@ export default {
           email: this.email,
           objet: this.objet,
           message: this.message,
-         
 
-         
+
+
         });
-         this.$router.push('/');
+        this.$router.push('/');
         alert(response.data.message)
         console.log(response.data.message);
       } catch (error) {
-        
+
         console.log('echec');
       }
     },
@@ -233,9 +251,10 @@ li {
   font-weight: bold;
   font-size: 19px;
 }
-li:hover{
-    background-color: rgba(13, 190, 167, 0.1);
-    cursor: pointer;
+
+li:hover {
+  background-color: rgba(13, 190, 167, 0.1);
+  cursor: pointer;
 }
 
 .menu {
@@ -437,17 +456,20 @@ nav h3 span {
   background: rgba(0, 0, 0, 0.2);
   margin-top: 8vh;
 }
-.partie4_2 .textL{
+
+.partie4_2 .textL {
   text-align: left;
   font-size: 35px;
   width: 50%;
   color: #2CC;
   margin-top: 20vh;
 }
-.partie4_2 p{
+
+.partie4_2 p {
   font-size: 15px;
   color: black;
 }
+
 .partie4 .btn {
   background-color: black;
   font-size: 20px;
@@ -460,75 +482,79 @@ nav h3 span {
 }
 
 .contact-form {
-max-width: 600px;
-margin: 0 auto;
-padding: 30px;
-background-color: #2CC;
-border-radius: 8px;
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-margin-top: 0px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #2CC;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 0px;
 }
 
 .form-title {
-text-align: center;
-color: black;
-margin-bottom: 30px;
-font-size: 40px;
-font-family: tiro Devanagari Hindi;
+  text-align: center;
+  color: black;
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-family: tiro Devanagari Hindi;
 }
 
 .form-group {
-margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 label {
-display: block;
-font-weight: bold;
-margin-bottom: 5px;
-color: #f8f8f8;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #f8f8f8;
 }
 
-input, textarea {
-width: 100%;
-padding: 10px;
-border: 1px solid #ddd;
-border-radius: 4px;
-font-size: 16px;
-background-color: white;
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
 }
 
 textarea {
-resize: vertical;
+  resize: vertical;
 }
 
 .submit-btn {
-display: block;
-width: 100%;
-padding: 12px 20px;
-background-color: black;
-color: white;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-font-size: 16px;
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .submit-btn:hover {
-background-color: rgb(173, 170, 170);
+  background-color: rgb(173, 170, 170);
 }
-.mots{
-    
+
+.mots {
+
   background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    display: flex;
-    align-items: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  display: flex;
+  align-items: center;
 }
-#form-texte{
+
+#form-texte {
   font-size: 24px;
   font-family: tiro Devanagari Hindi;
 }
+
 footer {
   background-color: #000;
   color: #fff;
@@ -582,10 +608,12 @@ footer {
   text-align: right;
   font-size: 14px;
 }
-span{
+
+span {
   color: #2CC;
-  
+
 }
+
 .footer-bottom {
   background-color: whitesmoke;
   padding: 10px 0;
@@ -606,6 +634,7 @@ span{
 .footer-bottom p:last-child {
   text-align: right;
 }
+
 /* Styles pour la liste déroulante */
 .dropdown {
   position: relative;
@@ -624,7 +653,7 @@ span{
   position: absolute;
   background-color: whitesmoke;
   min-width: 600px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 0;
   margin: 0;
@@ -648,5 +677,4 @@ span{
 .dropdown:hover .dropdown-menu {
   display: block;
 }
-
 </style>

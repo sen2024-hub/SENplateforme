@@ -23,6 +23,7 @@ import axios from 'axios';
 export default {
     data() {
         return {
+            isAuthentify: false,
             email: '',
             password: '',
             userId: '',
@@ -37,7 +38,8 @@ export default {
                     password: this.password
                 });
                 const {token, userId } = response.data;
-
+                this.isAuthentify = true;
+                localStorage.setItem('isAuthentify', true);
                 localStorage.setItem('userId', userId);
                 this.token = token;
                 this.userId = userId;
