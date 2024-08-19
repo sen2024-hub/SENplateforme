@@ -13,6 +13,7 @@
             <p>pas de compte?</p>
             <a href="/COMPTE">creer un compte</a>
             <button type="submit" class="submit-btn">Se connecter</button>
+            
         </form>
         <p v-if="error" class="error">{{ error }}</p>
     </div>
@@ -53,6 +54,7 @@ export default {
                 this.token = token;
                 this.userId = userId;
                 console.log(userId);
+                window.location.reload();
                 this.$router.push('/');
                 // Redirect the user to a protected route or do something else
             } catch (error) {

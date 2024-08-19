@@ -17,11 +17,12 @@
               <li><a href="/reseau-et-administration">Réseau et administration réseau</a></li>
             </ul>
           </li>
-          <li v-if="isAuthentify === false"><router-link class="menu" to="/PageConnexion">Se connecter</router-link>
+          <li v-if="isAuthentify === false" @click="showSeConnecter"><a class="menu">Se connecter</a>
           </li>
           <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon">Mes cours</router-link>
           </li>
-            <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;" class="fa fa-power-off"></i></router-link>
+          <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;"
+                class="fa fa-power-off"></i></router-link>
           </li>
         </ul>
       </nav>
@@ -67,19 +68,25 @@
         <h2>
           <img alt="" src="../assets/gestion de projet.jpg">
           GESTION DES PROJETS INFORMATIQUE
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos ipsam minus exercitationem, officia voluptates ullam atque mollitia. Quibusdam ab sunt culpa earum commodi? Rerum, nihil. Dolore totam tempora assumenda?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos ipsam minus exercitationem, officia
+            voluptates ullam atque mollitia. Quibusdam ab sunt culpa earum commodi? Rerum, nihil. Dolore totam tempora
+            assumenda?</p>
           <a href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
           <img alt="" src="../assets/developpement-site-web.jpg">
           CONCEPTION ET DEVELOPPEMNT D'APPLICATION WEB
-          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minus, suscipit veniam voluptatem soluta ratione distinctio illum? Nobis id, nulla accusamus molestiae assumenda nemo iste est perferendis voluptates repellat sequi!</p>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minus, suscipit veniam voluptatem soluta
+            ratione distinctio illum? Nobis id, nulla accusamus molestiae assumenda nemo iste est perferendis voluptates
+            repellat sequi!</p>
           <a href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
           <img alt="" src="../assets/infographie.png">
           INFOGRAPHIE ET CREATION MULTIMEDIA
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum quam cum nisi, autem tempora debitis corporis, unde labore dignissimos voluptatibus ipsam. Mollitia architecto temporibus reprehenderit deleniti provident expedita ea veniam?</p>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum quam cum nisi, autem tempora debitis
+            corporis, unde labore dignissimos voluptatibus ipsam. Mollitia architecto temporibus reprehenderit deleniti
+            provident expedita ea veniam?</p>
           <a href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
       </div>
@@ -87,20 +94,26 @@
       <div class="partie3_2">
         <h2>
           <img alt="" src="../assets/conception graphique.jpg">
-          CONCEPTION GRAPHIQUE 
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quos odio natus voluptates, beatae a placeat repellendus veritatis nulla eligendi iure! Quibusdam cumque assumenda nisi ea ducimus, eum accusantium libero.</p><br><br>
+          CONCEPTION GRAPHIQUE
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quos odio natus voluptates, beatae a
+            placeat repellendus veritatis nulla eligendi iure! Quibusdam cumque assumenda nisi ea ducimus, eum
+            accusantium libero.</p><br><br>
           <a href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
           <img alt="" src="../assets/app mobile.jpg">
           CONCEPTION ET DEVELOPPEMENT D'APPLICATION MOBILE
-          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae recusandae molestias sunt itaque cumque? Culpa est sunt, delectus rerum natus tenetur expedita, alias itaque cum beatae voluptates voluptate consectetur enim.</p>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae recusandae molestias sunt itaque cumque?
+            Culpa est sunt, delectus rerum natus tenetur expedita, alias itaque cum beatae voluptates voluptate
+            consectetur enim.</p>
           <a href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
           <img alt="" src="../assets/reseaux.jpg">
           RESEAUX ET ADMINISTRATION RESEAU
-          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, asperiores mollitia. Possimus, nemo. Blanditiis omnis aliquid consequuntur quam consectetur tenetur iste cumque ipsam, quia eveniet, tempore, in harum nemo! Recusandae!</p><br>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, asperiores mollitia. Possimus, nemo.
+            Blanditiis omnis aliquid consequuntur quam consectetur tenetur iste cumque ipsam, quia eveniet, tempore, in
+            harum nemo! Recusandae!</p><br>
           <a href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
       </div>
@@ -198,27 +211,39 @@
         <p>&copy; 2024 <span>Charis</span>Action. Tous droits réservés.</p>
       </div>
     </section>
+
+  </div>
+  <div v-if="SeConnecter" style="width: 100%; position: absolute; left: 0; top: 0; height: 100vh;" >
+    <connecter style="margin-top: 10%; margin-left: 30%; position: fixed;" />
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import connecter from './PageConnexion.vue';
 export default {
+  components: {
+    connecter,
+  },
   data() {
     return {
       selectedImageURL2: null,
       selectedImage2: null,
       isAuthentify: false,
       seConnecter: true,
+      SeConnecter: false,
     }
   },
+
   created() {
     const isAuthentify = localStorage.getItem('isAuthentify');
 
     this.isAuthentify = isAuthentify === 'true';
   },
   methods: {
-
+    showSeConnecter() {
+      this.SeConnecter = true;
+    },
     ifAuthentify() {
       this.seConnecter = false;
     },
@@ -226,7 +251,7 @@ export default {
       localStorage.removeItem('userId')
       localStorage.removeItem('isAuthentify')
       this.$router.push('/');
-      window.location.reload(); 
+      window.location.reload();
     },
     async comment() {
       try {
@@ -268,7 +293,7 @@ nav {
   display: flex;
   justify-content: space-between;
   left: 0px;
-  margin-top: -15px!important;
+  margin-top: -15px !important;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -423,7 +448,8 @@ nav h3 span {
   font-size: 40px;
   text-align: center;
 }
-.partie3 img{
+
+.partie3 img {
   width: 100%;
   border-radius: 10px;
   margin: 0;
@@ -431,6 +457,7 @@ nav h3 span {
   background-color: rgba(0, 0, 0, 0.2);
   margin-bottom: 15px;
 }
+
 .partie3 .title span {
   color: #2CC;
 }
@@ -469,7 +496,7 @@ nav h3 span {
   font-size: 25px;
   /* padding: 60px 0; */
   /* color: white; */
-   color: black;
+  color: black;
   text-align: left;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
@@ -480,7 +507,7 @@ nav h3 span {
   display: block;
   width: 100%;
   height: 100vh;
-   margin-top: 750px; 
+  margin-top: 750px;
 }
 
 .partie4 .partie4_1 {
@@ -512,9 +539,11 @@ nav h3 span {
   color: #2CC;
   margin-top: 20vh;
 }
-.textL h2 p{
+
+.textL h2 p {
   font-size: 20px;
 }
+
 .partie4_2 p {
   font-size: 15px;
   color: black;
@@ -730,25 +759,27 @@ span {
 }
 
 .button {
-      display: inline-block;
-      background-color: #333;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      width: 90%;
-      margin-top: 15px;
-    }
-    
-    .button:hover {
-      background-color: #555;
-    }  
-   h2 p{
-      font-size: 20px;
-      color: rgba(0, 0, 0, 0.5);
-      font-weight: lighter;
-    }
-    .partie6{
-      margin-top: 100px;
-    }
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  width: 90%;
+  margin-top: 15px;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+h2 p {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: lighter;
+}
+
+.partie6 {
+  margin-top: 100px;
+}
 </style>
