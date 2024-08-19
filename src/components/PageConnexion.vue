@@ -23,19 +23,28 @@ import axios from 'axios';
 export default {
     data() {
         return {
+            FormData :{
             isAuthentify: false,
             email: '',
             password: '',
             userId: '',
-            error: ''
-        }
+            error: '',
+        },
+    };
     },
     methods: {
+       
         async login() {
             try {
                 const response = await axios.post('http://localhost:3000/login', {
                     email: this.email,
-                    password: this.password
+                    password: this.password,
+
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(this.form)
+  
                 });
                 const {token, userId } = response.data;
                 this.isAuthentify = true;

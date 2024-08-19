@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <section>
-      <nav>
+      <nav style="position: fixed; background: white;">
         <h3><span>Charis</span>Action</h3>
         <ul>
           <li><router-link class="menu" to="/">Home</router-link></li>
@@ -21,7 +21,7 @@
           </li>
           <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon">Mes cours</router-link>
           </li>
-            <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/">Se deconnecter</router-link>
+            <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;" class="fa fa-power-off"></i></router-link>
           </li>
         </ul>
       </nav>
@@ -64,15 +64,45 @@
     <section class="partie3">
       <h2 class="title">NOS <span>FORMATIONS</span></h2>
       <div class="partie3_1">
-        <h2>GESTION DES PROJETS INFORMATIQUE</h2>
-        <h2>CONCEPTION ET DEVELOPPEMNT D'APPLICATION WEB</h2>
-        <h2>INFOGRAPHIE ET CREATION MULTIMEDIA</h2>
+        <h2>
+          <img alt="" src="../assets/gestion de projet.jpg">
+          GESTION DES PROJETS INFORMATIQUE
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos ipsam minus exercitationem, officia voluptates ullam atque mollitia. Quibusdam ab sunt culpa earum commodi? Rerum, nihil. Dolore totam tempora assumenda?</p>
+          <a href="/inscriptionPage" class="button">S'inscrire</a>
+        </h2>
+        <h2>
+          <img alt="" src="../assets/developpement-site-web.jpg">
+          CONCEPTION ET DEVELOPPEMNT D'APPLICATION WEB
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minus, suscipit veniam voluptatem soluta ratione distinctio illum? Nobis id, nulla accusamus molestiae assumenda nemo iste est perferendis voluptates repellat sequi!</p>
+          <a href="/inscriptionPage" class="button">S'inscrire</a>
+        </h2>
+        <h2>
+          <img alt="" src="../assets/infographie.png">
+          INFOGRAPHIE ET CREATION MULTIMEDIA
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum quam cum nisi, autem tempora debitis corporis, unde labore dignissimos voluptatibus ipsam. Mollitia architecto temporibus reprehenderit deleniti provident expedita ea veniam?</p>
+          <a href="/inscriptionPage" class="button">S'inscrire</a>
+        </h2>
       </div>
       <h3>Engagez-vous vers un avenir prospere</h3>
       <div class="partie3_2">
-        <h2>CONCEPTION GRAPHIQUE </h2>
-        <h2>CONCEPTION ET DEVELOPPEMENT D'APPLICATION MOBILE</h2>
-        <h2>RESEAUX ET ADMINISTRATION RESEAU</h2>
+        <h2>
+          <img alt="" src="../assets/conception graphique.jpg">
+          CONCEPTION GRAPHIQUE 
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quos odio natus voluptates, beatae a placeat repellendus veritatis nulla eligendi iure! Quibusdam cumque assumenda nisi ea ducimus, eum accusantium libero.</p><br><br>
+          <a href="/inscriptionPage" class="button">S'inscrire</a>
+        </h2>
+        <h2>
+          <img alt="" src="../assets/app mobile.jpg">
+          CONCEPTION ET DEVELOPPEMENT D'APPLICATION MOBILE
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae recusandae molestias sunt itaque cumque? Culpa est sunt, delectus rerum natus tenetur expedita, alias itaque cum beatae voluptates voluptate consectetur enim.</p>
+          <a href="/inscriptionPage" class="button">S'inscrire</a>
+        </h2>
+        <h2>
+          <img alt="" src="../assets/reseaux.jpg">
+          RESEAUX ET ADMINISTRATION RESEAU
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, asperiores mollitia. Possimus, nemo. Blanditiis omnis aliquid consequuntur quam consectetur tenetur iste cumque ipsam, quia eveniet, tempore, in harum nemo! Recusandae!</p><br>
+          <a href="/inscriptionPage" class="button">S'inscrire</a>
+        </h2>
       </div>
     </section>
     <section class="partie4">
@@ -225,19 +255,21 @@ export default {
 <style scoped>
 .container {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-  width: 85%;
+  width: 100%;
   margin: auto;
 }
 
 section {
   width: 100%;
-  margin-top: 50px;
 }
 
 nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  left: 0px;
+  margin-top: -15px!important;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 ul {
@@ -391,7 +423,14 @@ nav h3 span {
   font-size: 40px;
   text-align: center;
 }
-
+.partie3 img{
+  width: 100%;
+  border-radius: 10px;
+  margin: 0;
+  height: 30vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+}
 .partie3 .title span {
   color: #2CC;
 }
@@ -415,24 +454,33 @@ nav h3 span {
 
 .partie3_1 h2 {
   width: 27%;
-  background-color: #2CC;
+  background-color: white;
   font-size: 25px;
-  padding: 60px 0;
-  color: white;
+  color: black;
+  text-align: left;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .partie3_2 h2 {
   width: 27%;
-  background-color: #2CC;
+  background-color: white;
   font-size: 25px;
-  padding: 60px 0;
-  color: white;
+  /* padding: 60px 0; */
+  /* color: white; */
+   color: black;
+  text-align: left;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .partie4 {
   display: block;
   width: 100%;
   height: 100vh;
+   margin-top: 750px; 
 }
 
 .partie4 .partie4_1 {
@@ -464,7 +512,9 @@ nav h3 span {
   color: #2CC;
   margin-top: 20vh;
 }
-
+.textL h2 p{
+  font-size: 20px;
+}
 .partie4_2 p {
   font-size: 15px;
   color: black;
@@ -625,6 +675,7 @@ span {
 
 .footer-bottom p {
   margin: 0;
+  font-size: 14px;
 }
 
 .footer-bottom p:first-child {
@@ -652,7 +703,7 @@ span {
   display: none;
   position: absolute;
   background-color: whitesmoke;
-  min-width: 600px;
+  min-width: 400px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 0;
@@ -677,4 +728,27 @@ span {
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
+.button {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      width: 90%;
+      margin-top: 15px;
+    }
+    
+    .button:hover {
+      background-color: #555;
+    }  
+   h2 p{
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: lighter;
+    }
+    .partie6{
+      margin-top: 100px;
+    }
 </style>
