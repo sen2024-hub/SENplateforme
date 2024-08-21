@@ -279,6 +279,8 @@
       <input type="checkbox" name="terms" required> J'accepte les termes et conditions générales d'utilisation*
     </label>
       <button type="submit" class="submit-btn">S'inscrire</button>
+      <router-link to="/" class="btn">annuler</router-link>
+
     </form>
   </div>
 </template>
@@ -426,5 +428,12 @@ select:focus {
   margin-bottom: 25px;
   display: flex;
 }
+.btn {
 
+font-size: 20px;
+font-weight: bold;
+padding: 17px;
+text-decoration: none;
+color: rgb(0, 0, 0);
+}
 </style>

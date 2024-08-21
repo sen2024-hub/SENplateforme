@@ -75,8 +75,6 @@ button:hover {
   padding: 17px;
   text-decoration: none;
   color: rgb(0, 0, 0);
-
-
 }
 </style>
 

@@ -13,6 +13,8 @@
             <p>pas de compte?</p>
             <a href="/COMPTE">creer un compte</a>
             <button type="submit" class="submit-btn">Se connecter</button>
+
+          
             
         </form>
         <p v-if="error" class="error">{{ error }}</p>
@@ -172,4 +174,5 @@ a{
     text-decoration: none;
     color: darkslateblue;
 }
+
 </style>
