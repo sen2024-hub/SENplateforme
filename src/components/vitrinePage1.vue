@@ -23,6 +23,7 @@
 </li>
 
           <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon">Mes cours</router-link></li>
+          <li v-if="isAuthentify === true"><router-link class="menu" to="/MesClasses">Mes formations</router-link></li>
           <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;" class="fa fa-power-off"></i></router-link></li>
         </ul>
       </nav>
@@ -111,7 +112,7 @@
           RESEAUX ET ADMINISTRATION RESEAU
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, asperiores mollitia. Possimus, nemo.
             Blanditiis omnis aliquid consequuntur quam consectetur tenetur iste cumque ipsam, quia eveniet, tempore, in
-            harum nemo! Recusandae!</p><br>
+            harum nemo! Recusandae!</p><br><br>
           <a href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
       </div>
