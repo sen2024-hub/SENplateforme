@@ -15,8 +15,13 @@
               <li><a href="/conception-et-developpement-mobile">Conception et développement d'applications mobiles</a></li>
               <li><a href="/reseau-et-administration">Réseau et administration réseau</a></li>
             </ul>
-          </li>
-          <li v-if="isAuthentify === false" @click="showSeConnecter"><a class="menu">Se connecter</a></li>
+          </li><li v-if="isAuthentify === false" @click="showSeConnecter">
+  <a class="menu">
+    Se connecter
+    <Spinner :isLoading="isLoading" />
+  </a>
+</li>
+
           <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon">Mes cours</router-link></li>
           <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;" class="fa fa-power-off"></i></router-link></li>
         </ul>
