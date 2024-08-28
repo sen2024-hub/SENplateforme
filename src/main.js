@@ -14,6 +14,7 @@ import design from './components/conception-graphique.vue';
 import mobile from './components/conception-et-developpement-mobile.vue';
 import reseau from './components/reseau-et-administration.vue';
 import inscrire from './components/inscriptionPage.vue';
+import classe from './components/MesClasses.vue';
 
 const routes = [
   { path: '/none', component: HelloWorld },
@@ -29,6 +30,7 @@ const routes = [
   { path: '/inscriptionPage', component: inscrire },
   { path: '/', component: laodingPage },
   { path: '/vitrinePage1', component: vitrinePage1 }, // Ajout de la route pour vitrinePage1
+  { path: '/MesClasses', component: classe },
 ];
 
 const router = createRouter({

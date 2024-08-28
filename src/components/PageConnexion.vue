@@ -4,11 +4,11 @@
         <form>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email" v-model="email" required>
+                <input type="text"  name="email" v-model="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="password" v-model="password" required>
+                <input type="password"  name="password" v-model="password" required>
             </div>
             <p>pas de compte?</p>
             <a href="/COMPTE">creer un compte</a>
@@ -36,7 +36,7 @@ export default {
        
         async login() {
             try {
-                const response = await axios.post('http://localhost:3000/login', {
+                const response = await axios.post(' http://localhost:3000/login', {
                     email: this.email,
                     password: this.password,
 
