@@ -22,6 +22,7 @@
           </li>
           <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon">Mes cours</router-link>
           </li>
+          <li v-if="isAuthentify === true"><router-link class="menu" to="/MesClasses">Mes formations</router-link></li>
             <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;" class="fa fa-power-off"></i></router-link>
           </li>
         </ul>

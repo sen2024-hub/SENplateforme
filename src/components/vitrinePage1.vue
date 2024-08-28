@@ -96,7 +96,7 @@
           CONCEPTION GRAPHIQUE
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quos odio natus voluptates, beatae a
             placeat repellendus veritatis nulla eligendi iure! Quibusdam cumque assumenda nisi ea ducimus, eum
-            accusantium libero.</p><br><br>
+            accusantium libero.</p><br><br><br><br>
           <a href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
@@ -112,7 +112,7 @@
           RESEAUX ET ADMINISTRATION RESEAU
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, asperiores mollitia. Possimus, nemo.
             Blanditiis omnis aliquid consequuntur quam consectetur tenetur iste cumque ipsam, quia eveniet, tempore, in
-            harum nemo! Recusandae!</p><br><br>
+            harum nemo! Recusandae!</p><br><br><br>
           <a href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
       </div>
