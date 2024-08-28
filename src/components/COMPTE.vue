@@ -279,7 +279,7 @@
       <input type="checkbox" name="terms" required> J'accepte les termes et conditions générales d'utilisation*
     </label>
       <button type="submit" class="submit-btn">S'inscrire</button>
-      <router-link to="/" class="btn">annuler</router-link>
+      <router-link to="/PageConnexion" class="btn">annuler</router-link>
 
     </form>
   </div>
