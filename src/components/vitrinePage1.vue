@@ -12,18 +12,13 @@
               <li><a href="/conception-et-developpement-web">Conception et développement d'applications web</a></li>
               <li><a href="/infographie-et-creation-multimedia">Infographie et création multimédia</a></li>
               <li><a href="/conception-graphique">Conception graphique</a></li>
-              <li><a href="/conception-et-developpement-mobile">Conception et développement d'applications mobiles</a>
-              </li>
+              <li><a href="/conception-et-developpement-mobile">Conception et développement d'applications mobiles</a></li>
               <li><a href="/reseau-et-administration">Réseau et administration réseau</a></li>
             </ul>
           </li>
-          <li v-if="isAuthentify === false" @click="showSeConnecter"><a class="menu">Se connecter</a>
-          </li>
-          <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon">Mes cours</router-link>
-          </li>
-          <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;"
-                class="fa fa-power-off"></i></router-link>
-          </li>
+          <li v-if="isAuthentify === false" @click="showSeConnecter"><a class="menu">Se connecter</a></li>
+          <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon">Mes cours</router-link></li>
+          <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;" class="fa fa-power-off"></i></router-link></li>
         </ul>
       </nav>
       <div class="head">
@@ -34,12 +29,10 @@
               Faites De L'Informatique:<br>
               Votre Alié,<span>Au Quotidien</span>
             </h2>
-            <h3>Decouvrez L'Expertise D'un Leader En
-              Informatique.<br>
+            <h3>Decouvrez L'Expertise D'un Leader En Informatique.<br>
               Formations Completes D'infographie , Programmation ,<br> Design , Maintenance et bien d'autre.
             </h3>
-            <router-link to="/inscriptionPage" class="btn">Inscrivez-Vous
-              Dès Aujourd'hui !</router-link>
+            <router-link to="/inscriptionPage" class="btn">Inscrivez-Vous Dès Aujourd'hui !</router-link>
           </div>
         </div>
       </div>
@@ -105,7 +98,7 @@
           CONCEPTION ET DEVELOPPEMENT D'APPLICATION MOBILE
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae recusandae molestias sunt itaque cumque?
             Culpa est sunt, delectus rerum natus tenetur expedita, alias itaque cum beatae voluptates voluptate
-            consectetur enim.</p>
+            consectetur enim.</p><br><br>
           <a href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
@@ -124,16 +117,29 @@
         <div class="textL">
           <h2>QUI SOMMES NOUS? <br>
             <p>
-              Nous sommes une structurequi c’est donnée pour mission de former les leaders de demain dans les domaines
-              clés
-              de l’informatiques et de la technologie.Que vous souhaitez vous epanouir en tant que developpeur de
+              Nous sommes une structure qui c’est donnée pour mission de former les leaders de demain dans les domaines
+              clés de l’informatique et de la technologie. Que vous souhaitez vous épanouir en tant que développeur de
               logiciels,
-              concepteurs web ou encore infographe ,notre equipe d’expert vous accompagneras tout au long de votre
+              concepteurs web ou encore infographe, notre équipe d’experts vous accompagnera tout au long de votre
               parcours<br>
               VIVEZ UNE EXPERIENCE NOUVELLE AVEC NOUS
             </p>
           </h2>
-          <router-link class="btn">Voir plus</router-link>
+          <div class="dropdown2">
+  <div class="round-div">
+    <a href="#" class="menu">Voir plus</a>
+  </div>
+  <ul class="dropdown-menu">
+    
+    <p>-Formation complète au développement web (HTML, CSS, JavaScript, PHP, etc.)</p>
+    <p>-Apprentissage des techniques de conception et d'ergonomie de sites webe</p>
+    <p>-Réalisation de projets web complets, de la maquette à la mise en ligne</p>
+    <p>- acquérir une expertise reconnue en utils informatiques</p>
+    <p>-Accompagnement par des experts du web pour acquérir une expertise reconnue</p>
+  
+  </ul>
+</div>
+
         </div>
       </div>
     </section>
@@ -175,26 +181,21 @@
         <div class="footer-container">
           <div class="footer-left">
             <div class="footer-section">
-
               <ul>
                 <li><a href="#">Home</a></li>
               </ul>
             </div>
             <div class="footer-section">
-
               <ul>
                 <li><a href="#">Formations</a></li>
-
               </ul>
             </div>
             <div class="footer-section">
-
               <ul>
                 <li><a href="#">A propos</a></li>
               </ul>
             </div>
             <div class="footer-section">
-
               <ul>
                 <li><a href="#">Contact</a></li>
               </ul>
@@ -211,9 +212,8 @@
         <p>&copy; 2024 <span>Charis</span>Action. Tous droits réservés.</p>
       </div>
     </section>
-
   </div>
-  <div v-if="SeConnecter" style="width: 100%; position: absolute; left: 0; top: 0; height: 100vh;" >
+  <div v-if="SeConnecter" style="width: 100%; position: absolute; left: 0; top: 0; height: 100vh;">
     <connecter style="margin-top: 10%; margin-left: 30%; position: fixed;" />
   </div>
 </template>
@@ -232,12 +232,16 @@ export default {
       isAuthentify: false,
       seConnecter: true,
       SeConnecter: false,
+      nom: '',
+      prenom: '',
+      email: '',
+      objet: '',
+      message: '',
     }
   },
 
   created() {
     const isAuthentify = localStorage.getItem('isAuthentify');
-
     this.isAuthentify = isAuthentify === 'true';
   },
   methods: {
@@ -261,15 +265,11 @@ export default {
           email: this.email,
           objet: this.objet,
           message: this.message,
-
-
-
         });
         this.$router.push('/');
-        alert(response.data.message)
+        alert(response.data.message);
         console.log(response.data.message);
       } catch (error) {
-
         console.log('echec');
       }
     },
@@ -278,6 +278,19 @@ export default {
 </script>
 
 <style scoped>
+.round-div {
+  background-color: black;
+  border-radius: 0%; /* Pour rendre la div ronde */
+  padding: 0px; /* Ajoute de l'espace autour du lien */
+  display: inline-block; /* Pour que la div prenne la taille du contenu */
+}
+
+.round-div .menu {
+  color: white; /* Couleur du texte */
+  text-decoration: none; /* Supprime le soulignement */
+  padding: px 2px; /* Ajoute de l'espace autour du texte */
+}
+
 .container {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
   width: 100%;
@@ -335,7 +348,6 @@ nav h3 span {
   height: 90vh;
   background-position: center;
   background-size: cover;
-
 }
 
 .overlay {
@@ -355,7 +367,6 @@ nav h3 span {
   width: 50%;
   text-align: left;
   margin-left: 60px;
-
 }
 
 .text h2 {
@@ -366,7 +377,6 @@ nav h3 span {
 .text h2 span {
   font-size: 30px;
   color: #2CC;
-
 }
 
 .text h3 {
@@ -529,7 +539,7 @@ nav h3 span {
   width: 45%;
   height: 85vh;
   background: rgba(0, 0, 0, 0.2);
-  margin-top: 8vh;
+  margin-top: 15vh;
 }
 
 .partie4_2 .textL {
@@ -782,4 +792,46 @@ h2 p {
 .partie6 {
   margin-top: 100px;
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown2-menu {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  min-width: 400px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.dropdown2-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown2-menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown2-menu li a:hover {
+  background-color: rgb(133, 138, 138);
+}
+
+.dropdown2:hover .dropdown-menu {
+  display: block;
+}
+
 </style>
