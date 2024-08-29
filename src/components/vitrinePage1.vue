@@ -20,14 +20,10 @@
               <li><a href="/reseau-et-administration"><i class=""></i> Réseau et administration réseau</a></li>
             </ul>
           </li>
-          <li v-if="isAuthentify === false" @click="showSeConnecter"><a class="menu"><i class="fas fa-user"></i> Se
-              connecter</a></li>
-          <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon"><i
-                class="fas fa-chalkboard-teacher"></i> Mes cours</router-link></li>
-          <li v-if="isAuthentify === true" @click="showformation()"><a class="menu"><i
-                class="fas fa-graduation-cap"></i> Mes formations</a></li>
-          <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;"
-                class="fa fa-power-off"></i></router-link></li>
+          <li v-if="isAuthentify === false" @click="showSeConnecter"><a class="menu">Se connecter</a></li>
+          <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon">Mes cours</router-link></li>
+          <li v-if="isAuthentify === true"><router-link class="menu" to="/MesClasses">Mes formations</router-link></li>
+          <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;" class="fa fa-power-off"></i></router-link></li>
         </ul>
       </nav>
       <div v-if="modalformation" class="formation">
@@ -135,7 +131,7 @@
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, asperiores mollitia. Possimus, nemo.
             Blanditiis omnis aliquid consequuntur quam consectetur tenetur iste cumque ipsam, quia eveniet, tempore, in
             harum nemo! Recusandae!</p><br><br><br>
-          <a  class="button">S'inscrire</a>
+          <a href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         
       </div>
@@ -260,6 +256,7 @@ export default {
   },
   data() {
     return {
+      isLoading: false,
       selectedImageURL2: null,
       selectedImage2: null,
       isAuthentify: false,
@@ -282,6 +279,12 @@ export default {
   methods: {
     showSeConnecter() {
       this.SeConnecter = true;
+      this.isLoading = true; // Affiche le loader
+        setTimeout(() => {
+            this.isLoading = false; // Cache le loader après 3 secondes
+            this.$router.push('/inscriptionPage'); // Redirige vers la page d'inscription
+        }, 3000); // Simule un délai
+    },
     },
     ifAuthentify() {
       this.seConnecter = false;
@@ -322,10 +325,24 @@ export default {
       }
     },
   }
-}
 </script>
 
 <style scoped>
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto; /* Centrer le loader */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .round-div {
   background-color: black;
   border-radius: 0%;

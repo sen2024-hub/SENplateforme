@@ -16,6 +16,7 @@ import reseau from './components/reseau-et-administration.vue';
 import inscrire from './components/inscriptionPage.vue';
 import classe from './components/MesClasses.vue';
 
+
 const routes = [
   { path: '/none', component: HelloWorld },
   { path: '/COMPTE', component: inscription },
