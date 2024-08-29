@@ -8,7 +8,7 @@
           <li class="dropdown">
             <a href="#" class="menu"><i class="fas fa-book-open"></i> Formations</a>
             <ul class="dropdown-menu">
-              <li><a href="/gestion-de-projets-informatique"><i class=""></i> Gestion des projets informati-ques</a>
+              <li><a href="/gestion-de-projets-informatique"><i class=""></i> Gestion des projets informatiques</a>
               </li>
               <li><a href="/conception-et-developpement-web"><i class=""></i> Conception et développement d'applications
                   web</a></li>
