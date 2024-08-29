@@ -113,7 +113,11 @@
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, asperiores mollitia. Possimus, nemo.
             Blanditiis omnis aliquid consequuntur quam consectetur tenetur iste cumque ipsam, quia eveniet, tempore, in
             harum nemo! Recusandae!</p><br><br><br>
+            <div v-if="isLoading" class="loader">
+              <LoaderComponent :isLoading="isLoading" />  
+  <!-- Reste de votre composant -->    
           <a href="/inscriptionPage" class="button">S'inscrire</a>
+        </div>
         </h2>
       </div>
     </section>
@@ -233,6 +237,7 @@ export default {
   },
   data() {
     return {
+      isLoading: false,
       selectedImageURL2: null,
       selectedImage2: null,
       isAuthentify: false,
@@ -253,6 +258,12 @@ export default {
   methods: {
     showSeConnecter() {
       this.SeConnecter = true;
+      this.isLoading = true; // Affiche le loader
+        setTimeout(() => {
+            this.isLoading = false; // Cache le loader après 3 secondes
+            this.$router.push('/inscriptionPage'); // Redirige vers la page d'inscription
+        }, 3000); // Simule un délai
+    },
     },
     ifAuthentify() {
       this.seConnecter = false;
@@ -280,10 +291,24 @@ export default {
       }
     },
   }
-}
 </script>
 
 <style scoped>
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto; /* Centrer le loader */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .round-div {
   background-color: black;
   border-radius: 0%; /* Pour rendre la div ronde */
