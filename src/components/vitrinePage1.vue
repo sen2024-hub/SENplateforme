@@ -4,21 +4,24 @@
       <nav style="position: fixed; background: white;">
         <h3><span>Charis</span>Action</h3>
         <ul>
-          <li><router-link class="menu" to="/">Home</router-link></li>
-          <li class="dropdown">
-            <a href="#" class="menu">Formation</a>
-            <ul class="dropdown-menu">
-              <li><a href="/gestion-de-projets-informatique">Gestion des projets informatiques</a></li>
-              <li><a href="/conception-et-developpement-web">Conception et développement d'applications web</a></li>
-              <li><a href="/infographie-et-creation-multimedia">Infographie et création multimédia</a></li>
-              <li><a href="/conception-graphique">Conception graphique</a></li>
-              <li><a href="/conception-et-developpement-mobile">Conception et développement d'applications mobiles</a></li>
-              <li><a href="/reseau-et-administration">Réseau et administration réseau</a></li>
-            </ul>
-          </li>
-          <li v-if="isAuthentify === false" @click="showSeConnecter"><a class="menu">Se connecter</a></li>
-          <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon">Mes cours</router-link></li>
-          <li v-if="isAuthentify === true"><router-link class="menu" to="/MesClasses">Mes formations</router-link></li>
+          <li><router-link class="menu" to="/"><i class="fas fa-home"></i> Home</router-link></li>
+<li class="dropdown">
+  <a href="#" class="menu"><i class="fas fa-book-open"></i> Formations</a>
+  <ul class="dropdown-menu">
+    <li><a href="/gestion-de-projets-informatique"><i class=""></i> Gestion des projets informatiques</a></li>
+    <li><a href="/conception-et-developpement-web"><i class=""></i> Conception et développement d'applications web</a></li>
+    <li><a href="/infographie-et-creation-multimedia"><i class=""></i> Infographie et création multimédia</a></li>
+    <li><a href="/conception-graphique"><i class=""></i> Conception graphique</a></li>
+    <li><a href="/conception-et-developpement-mobile"><i class=""></i> Conception et développement d'applications mobiles</a></li>
+    <li><a href="/reseau-et-administration"><i class=""></i> Réseau et administration réseau</a></li>
+  </ul>
+</li>
+<li v-if="isAuthentify === false" @click="showSeConnecter"><a class="menu"><i class="fas fa-user"></i> Se connecter</a></li>
+<li v-if="isAuthentify === true"><router-link class="menu" to="/lecon"><i class="fas fa-chalkboard-teacher"></i> Mes cours</router-link></li>
+<li v-if="isAuthentify === true"><router-link class="menu" to="/MesClasses"><i class="fas fa-graduation-cap"></i> Mes formations</router-link></li>
+          <div>
+            <classe style="margin-top: 10%; margin-left: 30%; position: fixed;" />
+          </div>
           <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;" class="fa fa-power-off"></i></router-link></li>
         </ul>
       </nav>
@@ -222,9 +225,11 @@
 <script>
 import axios from 'axios';
 import connecter from './PageConnexion.vue';
+import classe from './MesClasses.vue';
 export default {
   components: {
     connecter,
+    classe,
   },
   data() {
     return {
