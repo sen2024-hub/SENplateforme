@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h2>Mes formations</h2>
         <ul v-if="classes.length > 0">
             <li v-for="classe in classes" :key="classe.id_classe">
                 {{ classe.nom_classe }}
@@ -16,7 +15,8 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            classes: [] // Variable pour stocker les classes
+            classes: [] ,// Variable pour stocker les classes
+           
         };
     },
     mounted() {
@@ -44,7 +44,8 @@ export default {
                     console.error('Détails de l\'erreur:', error.response.data);
                 }
             }
-        }
+        },
+        
     }
 };
 </script>
@@ -65,10 +66,8 @@ ul {
     padding: 0;
     margin: 40px auto;
     max-width: 600px; /* Largeur de la boîte */
-    border: 1px solid #ddd; /* Bordure */
-    border-radius: 15px; /* Coins arrondis */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre */
-    background-color: transparent; /* Pas de fond */
+    background-color: white;
+    
     font-size: 20px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }

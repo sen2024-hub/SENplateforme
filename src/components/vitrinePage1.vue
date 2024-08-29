@@ -5,26 +5,38 @@
         <h3><span>Charis</span>Action</h3>
         <ul>
           <li><router-link class="menu" to="/"><i class="fas fa-home"></i> Home</router-link></li>
-<li class="dropdown">
-  <a href="#" class="menu"><i class="fas fa-book-open"></i> Formations</a>
-  <ul class="dropdown-menu">
-    <li><a href="/gestion-de-projets-informatique"><i class=""></i> Gestion des projets informatiques</a></li>
-    <li><a href="/conception-et-developpement-web"><i class=""></i> Conception et développement d'applications web</a></li>
-    <li><a href="/infographie-et-creation-multimedia"><i class=""></i> Infographie et création multimédia</a></li>
-    <li><a href="/conception-graphique"><i class=""></i> Conception graphique</a></li>
-    <li><a href="/conception-et-developpement-mobile"><i class=""></i> Conception et développement d'applications mobiles</a></li>
-    <li><a href="/reseau-et-administration"><i class=""></i> Réseau et administration réseau</a></li>
-  </ul>
-</li>
-<li v-if="isAuthentify === false" @click="showSeConnecter"><a class="menu"><i class="fas fa-user"></i> Se connecter</a></li>
-<li v-if="isAuthentify === true"><router-link class="menu" to="/lecon"><i class="fas fa-chalkboard-teacher"></i> Mes cours</router-link></li>
-<li v-if="isAuthentify === true"><router-link class="menu" to="/MesClasses"><i class="fas fa-graduation-cap"></i> Mes formations</router-link></li>
-          <div>
-            <classe style="margin-top: 10%; margin-left: 30%; position: fixed;" />
-          </div>
-          <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;" class="fa fa-power-off"></i></router-link></li>
+          <li class="dropdown">
+            <a href="#" class="menu"><i class="fas fa-book-open"></i> Formations</a>
+            <ul class="dropdown-menu">
+              <li><a href="/gestion-de-projets-informatique"><i class=""></i> Gestion des projets informati-ques</a>
+              </li>
+              <li><a href="/conception-et-developpement-web"><i class=""></i> Conception et développement d'applications
+                  web</a></li>
+              <li><a href="/infographie-et-creation-multimedia"><i class=""></i> Infographie et création multimédia</a>
+              </li>
+              <li><a href="/conception-graphique"><i class=""></i> Conception graphique</a></li>
+              <li><a href="/conception-et-developpement-mobile"><i class=""></i> Conception et développement
+                  d'applications mobiles</a></li>
+              <li><a href="/reseau-et-administration"><i class=""></i> Réseau et administration réseau</a></li>
+            </ul>
+          </li>
+          <li v-if="isAuthentify === false" @click="showSeConnecter"><a class="menu"><i class="fas fa-user"></i> Se
+              connecter</a></li>
+          <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon"><i
+                class="fas fa-chalkboard-teacher"></i> Mes cours</router-link></li>
+          <li v-if="isAuthentify === true" @click="showformation()"><a class="menu"><i
+                class="fas fa-graduation-cap"></i> Mes formations</a></li>
+          <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;"
+                class="fa fa-power-off"></i></router-link></li>
         </ul>
       </nav>
+      <div v-if="modalformation" class="formation">
+        <div style="display: flex; justify-content: space-between; width: 100%;">
+          <div></div>
+          <i @click="hideformation()" style="color: red; font-size: 25px; padding-right: 10px; margin-top: 10px;" class="fas fa-window-close"></i>
+        </div>
+        <classe />
+      </div>
       <div class="head">
         <div class="overlay">
           <div class="text2"></div>
@@ -130,19 +142,19 @@
             </p>
           </h2>
           <div class="dropdown2">
-  <div class="round-div">
-    <a href="#" class="menu">Voir plus</a>
-  </div>
-  <ul class="dropdown-menu">
-    
-    <p>-Formation complète au développement web (HTML, CSS, JavaScript, PHP, etc.)</p>
-    <p>-Apprentissage des techniques de conception et d'ergonomie de sites webe</p>
-    <p>-Réalisation de projets web complets, de la maquette à la mise en ligne</p>
-    <p>- acquérir une expertise reconnue en utils informatiques</p>
-    <p>-Accompagnement par des experts du web pour acquérir une expertise reconnue</p>
-  
-  </ul>
-</div>
+            <div class="round-div">
+              <a href="#" class="menu">Voir plus</a>
+            </div>
+            <ul class="dropdown-menu">
+
+              <p>-Formation complète au développement web (HTML, CSS, JavaScript, PHP, etc.)</p>
+              <p>-Apprentissage des techniques de conception et d'ergonomie de sites webe</p>
+              <p>-Réalisation de projets web complets, de la maquette à la mise en ligne</p>
+              <p>- acquérir une expertise reconnue en utils informatiques</p>
+              <p>-Accompagnement par des experts du web pour acquérir une expertise reconnue</p>
+
+            </ul>
+          </div>
 
         </div>
       </div>
@@ -243,6 +255,7 @@ export default {
       email: '',
       objet: '',
       message: '',
+      modalformation: false,
     }
   },
 
@@ -262,6 +275,12 @@ export default {
       localStorage.removeItem('isAuthentify')
       this.$router.push('/');
       window.location.reload();
+    },
+    showformation() {
+      this.modalformation = true;
+    },
+    hideformation(){
+      this.modalformation = false;
     },
     async comment() {
       try {
@@ -286,15 +305,31 @@ export default {
 <style scoped>
 .round-div {
   background-color: black;
-  border-radius: 0%; /* Pour rendre la div ronde */
-  padding: 0px; /* Ajoute de l'espace autour du lien */
-  display: inline-block; /* Pour que la div prenne la taille du contenu */
+  border-radius: 0%;
+  /* Pour rendre la div ronde */
+  padding: 0px;
+  /* Ajoute de l'espace autour du lien */
+  display: inline-block;
+  /* Pour que la div prenne la taille du contenu */
+}
+
+.formation {
+  position: absolute;
+  background-color: white;
+  width: 30%;
+  border-radius: 15px; /* Coins arrondis */
+  top: 12%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+  left: 68%;
 }
 
 .round-div .menu {
-  color: white; /* Couleur du texte */
-  text-decoration: none; /* Supprime le soulignement */
-  padding: px 2px; /* Ajoute de l'espace autour du texte */
+  color: white;
+  /* Couleur du texte */
+  text-decoration: none;
+  /* Supprime le soulignement */
+  padding: px 2px;
+  /* Ajoute de l'espace autour du texte */
 }
 
 .container {
@@ -798,6 +833,7 @@ h2 p {
 .partie6 {
   margin-top: 100px;
 }
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -840,4 +876,15 @@ h2 p {
   display: block;
 }
 
+.menu i {
+  color: #2cc;
+  /* Couleur des icônes */
+  margin-right: 8px;
+  /* Espacement entre l'icône et le texte */
+}
+
+.menu:hover i {
+  color: #34b5be;
+  /* Couleur des icônes au survol */
+}
 </style>
