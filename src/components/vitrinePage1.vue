@@ -32,7 +32,6 @@
       </nav>
       <div v-if="modalformation" class="formation">
         <div style="display: flex; justify-content: space-between; width: 100%;">
-          <div></div>
           <i @click="hideformation()" style="color: red; font-size: 25px; padding-right: 10px; margin-top: 10px;" class="fas fa-window-close"></i>
         </div>
         <classe />
@@ -48,7 +47,13 @@
             <h3>Decouvrez L'Expertise D'un Leader En Informatique.<br>
               Formations Completes D'infographie , Programmation ,<br> Design , Maintenance et bien d'autre.
             </h3>
-            <router-link to="/inscriptionPage" class="btn">Inscrivez-Vous Dès Aujourd'hui !</router-link>
+            <a  class="btn" @click="showclasse">Inscrivez-Vous Dès Aujourd'hui !</a>
+            <div v-if="modalclasse" style="position: absolute;left: 470px;top:150px ;">
+          <div style="display: flex; justify-content: space-between; width: 100%;">
+          <i @click="hideclasse()" style="color: red; font-size: 25px; padding-right: 10px; margin-top: 10px;" class="fas fa-window-close"></i>
+        </div>
+          <inscrire />
+        </div>
           </div>
         </div>
       </div>
@@ -66,9 +71,11 @@
             parcours scolaire
             et
             même sociale.<br></p>
-          <router-link to="/inscriptionPage" class="btn">Inscrivez-Vous
-            Dès Aujourd'hui !</router-link>
+          <a  class="btn">Inscrivez-Vous
+            Dès Aujourd'hui !</a>
+        
         </div>
+
       </div>
     </section>
     <section class="partie3">
@@ -80,24 +87,27 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos ipsam minus exercitationem, officia
             voluptates ullam atque mollitia. Quibusdam ab sunt culpa earum commodi? Rerum, nihil. Dolore totam tempora
             assumenda?</p>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a  class="button">S'inscrire</a>
         </h2>
+       
         <h2>
           <img alt="" src="../assets/developpement-site-web.jpg">
           CONCEPTION ET DEVELOPPEMNT D'APPLICATION WEB
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minus, suscipit veniam voluptatem soluta
             ratione distinctio illum? Nobis id, nulla accusamus molestiae assumenda nemo iste est perferendis voluptates
             repellat sequi!</p>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a  class="button">S'inscrire</a>
         </h2>
+        
         <h2>
           <img alt="" src="../assets/infographie.png">
           INFOGRAPHIE ET CREATION MULTIMEDIA
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum quam cum nisi, autem tempora debitis
             corporis, unde labore dignissimos voluptatibus ipsam. Mollitia architecto temporibus reprehenderit deleniti
             provident expedita ea veniam?</p>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a  class="button">S'inscrire</a>
         </h2>
+        
       </div>
       <h3>Engagez-vous vers un avenir prospere</h3>
       <div class="partie3_2">
@@ -107,24 +117,27 @@
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quos odio natus voluptates, beatae a
             placeat repellendus veritatis nulla eligendi iure! Quibusdam cumque assumenda nisi ea ducimus, eum
             accusantium libero.</p><br><br><br><br>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a  class="button">S'inscrire</a>
         </h2>
+       
         <h2>
           <img alt="" src="../assets/app mobile.jpg">
           CONCEPTION ET DEVELOPPEMENT D'APPLICATION MOBILE
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae recusandae molestias sunt itaque cumque?
             Culpa est sunt, delectus rerum natus tenetur expedita, alias itaque cum beatae voluptates voluptate
             consectetur enim.</p><br><br>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a  class="button">S'inscrire</a>
         </h2>
+      
         <h2>
           <img alt="" src="../assets/reseaux.jpg">
           RESEAUX ET ADMINISTRATION RESEAU
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, asperiores mollitia. Possimus, nemo.
             Blanditiis omnis aliquid consequuntur quam consectetur tenetur iste cumque ipsam, quia eveniet, tempore, in
             harum nemo! Recusandae!</p><br><br><br>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a  class="button">S'inscrire</a>
         </h2>
+        
       </div>
     </section>
     <section class="partie4">
@@ -238,10 +251,12 @@
 import axios from 'axios';
 import connecter from './PageConnexion.vue';
 import classe from './MesClasses.vue';
+import inscrire from './inscriptionPage.vue';
 export default {
   components: {
     connecter,
     classe,
+    inscrire,
   },
   data() {
     return {
@@ -256,6 +271,7 @@ export default {
       objet: '',
       message: '',
       modalformation: false,
+      modalclasse: false,
     }
   },
 
@@ -269,6 +285,7 @@ export default {
     },
     ifAuthentify() {
       this.seConnecter = false;
+
     },
     logout() {
       localStorage.removeItem('userId')
@@ -278,6 +295,12 @@ export default {
     },
     showformation() {
       this.modalformation = true;
+    },
+  showclasse() {
+    this.modalclasse = true;
+  },
+  hideclasse(){
+      this.modalclasse = false;
     },
     hideformation(){
       this.modalformation = false;
@@ -878,7 +901,6 @@ h2 p {
 
 .menu i {
   color: #2cc;
-  /* Couleur des icônes */
   margin-right: 8px;
   /* Espacement entre l'icône et le texte */
 }

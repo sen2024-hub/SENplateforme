@@ -10,8 +10,9 @@
         </select>
         <button type="submit">Souscrire</button>
       </form>
-
-      
+      <h1 class="messageErreur" v-if="message">L'utilisateur est déjà inscrit pour cette classe <br>
+        <button @click="offPup">ok</button>
+      </h1>
       <router-link to="/" class="btn">annuler</router-link>
 
     </div>
@@ -24,6 +25,17 @@
   padding: 20px;
   width: 100%;
 
+}
+
+.messageErreur {
+  position: absolute;
+  left: 35%;
+  width: 30%;
+  padding: 20px;
+  font-size: 25px;
+  top: 37%;
+  background-color: black;
+  color: #2cc;
 }
 
 .form {
@@ -87,6 +99,7 @@ export default {
       formations: [],
       id_utilisateur: '',
       id_classe: '',
+      message: false
     }
   },
   mounted() {
@@ -102,7 +115,9 @@ export default {
         console.error('Erreur lors de la récupération des classe :', error);
       }
     },
-
+    offPup() {
+      this.message = false;
+    },
     async formation() {
       try {
         const response = await axios.post('http://localhost:3000/formation', {
@@ -113,7 +128,7 @@ export default {
 
         console.log(response.data.message);
       } catch (error) {
-
+        this.message = true;
         console.log('echec');
       }
     },
