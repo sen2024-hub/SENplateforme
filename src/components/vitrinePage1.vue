@@ -4,29 +4,34 @@
       <nav style="position: fixed; background: white;">
         <h3><span>Charis</span>Action</h3>
         <ul>
-          <li><router-link class="menu" to="/">Home</router-link></li>
+          <li><router-link class="menu" to="/"><i class="fas fa-home"></i> Home</router-link></li>
           <li class="dropdown">
-            <a href="#" class="menu">Formation</a>
+            <a href="#" class="menu"><i class="fas fa-book-open"></i> Formations</a>
             <ul class="dropdown-menu">
-              <li><a href="/gestion-de-projets-informatique">Gestion des projets informatiques</a></li>
-              <li><a href="/conception-et-developpement-web">Conception et développement d'applications web</a></li>
-              <li><a href="/infographie-et-creation-multimedia">Infographie et création multimédia</a></li>
-              <li><a href="/conception-graphique">Conception graphique</a></li>
-              <li><a href="/conception-et-developpement-mobile">Conception et développement d'applications mobiles</a></li>
-              <li><a href="/reseau-et-administration">Réseau et administration réseau</a></li>
+              <li><a href="/gestion-de-projets-informatique"><i class=""></i> Gestion des projets informati-ques</a>
+              </li>
+              <li><a href="/conception-et-developpement-web"><i class=""></i> Conception et développement d'applications
+                  web</a></li>
+              <li><a href="/infographie-et-creation-multimedia"><i class=""></i> Infographie et création multimédia</a>
+              </li>
+              <li><a href="/conception-graphique"><i class=""></i> Conception graphique</a></li>
+              <li><a href="/conception-et-developpement-mobile"><i class=""></i> Conception et développement
+                  d'applications mobiles</a></li>
+              <li><a href="/reseau-et-administration"><i class=""></i> Réseau et administration réseau</a></li>
             </ul>
-          </li><li v-if="isAuthentify === false" @click="showSeConnecter">
-  <a class="menu">
-    Se connecter
-    <Spinner :isLoading="isLoading" />
-  </a>
-</li>
-
+          </li>
+          <li v-if="isAuthentify === false" @click="showSeConnecter"><a class="menu">Se connecter</a></li>
           <li v-if="isAuthentify === true"><router-link class="menu" to="/lecon">Mes cours</router-link></li>
           <li v-if="isAuthentify === true"><router-link class="menu" to="/MesClasses">Mes formations</router-link></li>
           <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;" class="fa fa-power-off"></i></router-link></li>
         </ul>
       </nav>
+      <div v-if="modalformation" class="formation">
+        <div style="display: flex; justify-content: space-between; width: 100%;">
+          <i @click="hideformation()" style="color: red; font-size: 25px; padding-right: 10px; margin-top: 10px;" class="fas fa-window-close"></i>
+        </div>
+        <classe />
+      </div>
       <div class="head">
         <div class="overlay">
           <div class="text2"></div>
@@ -38,7 +43,13 @@
             <h3>Decouvrez L'Expertise D'un Leader En Informatique.<br>
               Formations Completes D'infographie , Programmation ,<br> Design , Maintenance et bien d'autre.
             </h3>
-            <router-link to="/inscriptionPage" class="btn">Inscrivez-Vous Dès Aujourd'hui !</router-link>
+            <a  class="btn" @click="showclasse">Inscrivez-Vous Dès Aujourd'hui !</a>
+            <div v-if="modalclasse" style="position: absolute;left: 470px;top:150px ;">
+          <div style="display: flex; justify-content: space-between; width: 100%;">
+          <i @click="hideclasse()" style="color: red; font-size: 25px; padding-right: 10px; margin-top: 10px;" class="fas fa-window-close"></i>
+        </div>
+          <inscrire />
+        </div>
           </div>
         </div>
       </div>
@@ -56,9 +67,11 @@
             parcours scolaire
             et
             même sociale.<br></p>
-          <router-link to="/inscriptionPage" class="btn">Inscrivez-Vous
-            Dès Aujourd'hui !</router-link>
+          <a  class="btn">Inscrivez-Vous
+            Dès Aujourd'hui !</a>
+        
         </div>
+
       </div>
     </section>
     <section class="partie3">
@@ -70,24 +83,27 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos ipsam minus exercitationem, officia
             voluptates ullam atque mollitia. Quibusdam ab sunt culpa earum commodi? Rerum, nihil. Dolore totam tempora
             assumenda?</p>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a  class="button">S'inscrire</a>
         </h2>
+       
         <h2>
           <img alt="" src="../assets/developpement-site-web.jpg">
           CONCEPTION ET DEVELOPPEMNT D'APPLICATION WEB
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minus, suscipit veniam voluptatem soluta
             ratione distinctio illum? Nobis id, nulla accusamus molestiae assumenda nemo iste est perferendis voluptates
             repellat sequi!</p>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a  class="button">S'inscrire</a>
         </h2>
+        
         <h2>
           <img alt="" src="../assets/infographie.png">
           INFOGRAPHIE ET CREATION MULTIMEDIA
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum quam cum nisi, autem tempora debitis
             corporis, unde labore dignissimos voluptatibus ipsam. Mollitia architecto temporibus reprehenderit deleniti
             provident expedita ea veniam?</p>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a  class="button">S'inscrire</a>
         </h2>
+        
       </div>
       <h3>Engagez-vous vers un avenir prospere</h3>
       <div class="partie3_2">
@@ -97,28 +113,27 @@
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quos odio natus voluptates, beatae a
             placeat repellendus veritatis nulla eligendi iure! Quibusdam cumque assumenda nisi ea ducimus, eum
             accusantium libero.</p><br><br><br><br>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a  class="button">S'inscrire</a>
         </h2>
+       
         <h2>
           <img alt="" src="../assets/app mobile.jpg">
           CONCEPTION ET DEVELOPPEMENT D'APPLICATION MOBILE
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae recusandae molestias sunt itaque cumque?
             Culpa est sunt, delectus rerum natus tenetur expedita, alias itaque cum beatae voluptates voluptate
             consectetur enim.</p><br><br>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a  class="button">S'inscrire</a>
         </h2>
+      
         <h2>
           <img alt="" src="../assets/reseaux.jpg">
           RESEAUX ET ADMINISTRATION RESEAU
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, asperiores mollitia. Possimus, nemo.
             Blanditiis omnis aliquid consequuntur quam consectetur tenetur iste cumque ipsam, quia eveniet, tempore, in
             harum nemo! Recusandae!</p><br><br><br>
-            <div v-if="isLoading" class="loader">
-              <LoaderComponent :isLoading="isLoading" />  
-  <!-- Reste de votre composant -->    
           <a href="/inscriptionPage" class="button">S'inscrire</a>
-        </div>
         </h2>
+        
       </div>
     </section>
     <section class="partie4">
@@ -136,19 +151,19 @@
             </p>
           </h2>
           <div class="dropdown2">
-  <div class="round-div">
-    <a href="#" class="menu">Voir plus</a>
-  </div>
-  <ul class="dropdown-menu">
-    
-    <p>-Formation complète au développement web (HTML, CSS, JavaScript, PHP, etc.)</p>
-    <p>-Apprentissage des techniques de conception et d'ergonomie de sites webe</p>
-    <p>-Réalisation de projets web complets, de la maquette à la mise en ligne</p>
-    <p>- acquérir une expertise reconnue en utils informatiques</p>
-    <p>-Accompagnement par des experts du web pour acquérir une expertise reconnue</p>
-  
-  </ul>
-</div>
+            <div class="round-div">
+              <a href="#" class="menu">Voir plus</a>
+            </div>
+            <ul class="dropdown-menu">
+
+              <p>-Formation complète au développement web (HTML, CSS, JavaScript, PHP, etc.)</p>
+              <p>-Apprentissage des techniques de conception et d'ergonomie de sites webe</p>
+              <p>-Réalisation de projets web complets, de la maquette à la mise en ligne</p>
+              <p>- acquérir une expertise reconnue en utils informatiques</p>
+              <p>-Accompagnement par des experts du web pour acquérir une expertise reconnue</p>
+
+            </ul>
+          </div>
 
         </div>
       </div>
@@ -231,9 +246,13 @@
 <script>
 import axios from 'axios';
 import connecter from './PageConnexion.vue';
+import classe from './MesClasses.vue';
+import inscrire from './inscriptionPage.vue';
 export default {
   components: {
     connecter,
+    classe,
+    inscrire,
   },
   data() {
     return {
@@ -248,6 +267,8 @@ export default {
       email: '',
       objet: '',
       message: '',
+      modalformation: false,
+      modalclasse: false,
     }
   },
 
@@ -267,12 +288,25 @@ export default {
     },
     ifAuthentify() {
       this.seConnecter = false;
+
     },
     logout() {
       localStorage.removeItem('userId')
       localStorage.removeItem('isAuthentify')
       this.$router.push('/');
       window.location.reload();
+    },
+    showformation() {
+      this.modalformation = true;
+    },
+  showclasse() {
+    this.modalclasse = true;
+  },
+  hideclasse(){
+      this.modalclasse = false;
+    },
+    hideformation(){
+      this.modalformation = false;
     },
     async comment() {
       try {
@@ -311,15 +345,31 @@ export default {
 
 .round-div {
   background-color: black;
-  border-radius: 0%; /* Pour rendre la div ronde */
-  padding: 0px; /* Ajoute de l'espace autour du lien */
-  display: inline-block; /* Pour que la div prenne la taille du contenu */
+  border-radius: 0%;
+  /* Pour rendre la div ronde */
+  padding: 0px;
+  /* Ajoute de l'espace autour du lien */
+  display: inline-block;
+  /* Pour que la div prenne la taille du contenu */
+}
+
+.formation {
+  position: absolute;
+  background-color: white;
+  width: 30%;
+  border-radius: 15px; /* Coins arrondis */
+  top: 12%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+  left: 68%;
 }
 
 .round-div .menu {
-  color: white; /* Couleur du texte */
-  text-decoration: none; /* Supprime le soulignement */
-  padding: px 2px; /* Ajoute de l'espace autour du texte */
+  color: white;
+  /* Couleur du texte */
+  text-decoration: none;
+  /* Supprime le soulignement */
+  padding: px 2px;
+  /* Ajoute de l'espace autour du texte */
 }
 
 .container {
@@ -823,6 +873,7 @@ h2 p {
 .partie6 {
   margin-top: 100px;
 }
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -865,4 +916,14 @@ h2 p {
   display: block;
 }
 
+.menu i {
+  color: #2cc;
+  margin-right: 8px;
+  /* Espacement entre l'icône et le texte */
+}
+
+.menu:hover i {
+  color: #34b5be;
+  /* Couleur des icônes au survol */
+}
 </style>
