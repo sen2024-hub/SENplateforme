@@ -26,14 +26,16 @@
                 class="fas fa-chalkboard-teacher"></i> Mes cours</router-link></li>
           <li v-if="isAuthentify === true" @click="showformation()"><a class="menu"><i
                 class="fas fa-graduation-cap"></i> Mes formations</a></li>
-                <li  v-if="isAuthentify === true"><router-link class="menu" style="color: #2CC;" to="/">{{ userName }}</router-link></li>
+          <li v-if="isAuthentify === true"><router-link class="menu" style="color: #2CC;" to="/">{{ userName
+              }}</router-link></li>
           <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;"
                 class="fa fa-power-off"></i></router-link></li>
         </ul>
       </nav>
       <div v-if="modalformation" class="formation">
         <div style="display: flex; justify-content: space-between; width: 100%;">
-          <i @click="hideformation()" style="color: red; font-size: 25px; padding-right: 10px; margin-top: 10px;" class="fas fa-window-close"></i>
+          <i @click="hideformation()" style="color: red; font-size: 25px; padding-right: 10px; margin-top: 10px;"
+            class="fas fa-window-close"></i>
         </div>
         <classe />
       </div>
@@ -48,14 +50,17 @@
             <h3>Decouvrez L'Expertise D'un Leader En Informatique.<br>
               Formations Completes D'infographie , Programmation ,<br> Design , Maintenance et bien d'autre.
             </h3>
-            <li @click="showinscription()"><a class="btn"> Inscrivez-Vous Dès Aujourd'hui !</a></li>
-            
-            <div v-if="modalinscription" style="background-color: white;border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);top: 1px;left: 250px;width: 700px;">
+            <li v-if="isAuthentify === false" @click="showinscription()"><a class="btn"> Inscrivez-Vous Dès Aujourd'hui
+                !</a></li>
+
+            <div v-if="modalinscription"
+              style="background-color: white;border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);top: 1px;left: 250px;width: 700px;">
               <div style="display: flex; justify-content: space-between; width: 100%;">
-          <i @click="hideinscrition()" style="color: red; font-size: 25px; padding-right:1px; margin-top: 10px;" class="fas fa-window-close"></i>
-        </div>
-          <inscrire />
-        </div>
+                <i @click="hideinscrition()" style="color: red; font-size: 25px; padding-right:1px; margin-top: 10px;"
+                  class="fas fa-window-close"></i>
+              </div>
+              <inscrire />
+            </div>
           </div>
         </div>
       </div>
@@ -73,12 +78,15 @@
             parcours scolaire
             et
             même sociale.<br></p>
-            <li @click="showinscription()"><a class="btn"> Inscrivez-Vous Dès Aujourd'hui !</a></li>
+          <li v-if="isAuthentify === false" @click="showinscription()"><a class="btn"> Inscrivez-Vous Dès Aujourd'hui
+              !</a></li>
         </div>
-        <div v-if="modalinscription" style="background-color: white;border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);top: 1px;left: 250px;width: 700px;">
-              <div style="display: flex; justify-content: space-between; width: 100%;">
-          <i @click="hideinscrition()" style="color: red; font-size: 25px; padding-right:1px; margin-top: 10px;" class="fas fa-window-close"></i>
-        </div>
+        <div v-if="modalinscription"
+          style="background-color: white;border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);top: 1px;left: 250px;width: 700px;">
+          <div style="display: flex; justify-content: space-between; width: 100%;">
+            <i @click="hideinscrition()" style="color: red; font-size: 25px; padding-right:1px; margin-top: 10px;"
+              class="fas fa-window-close"></i>
+          </div>
           <inscrire />
         </div>
       </div>
@@ -92,7 +100,7 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos ipsam minus exercitationem, officia
             voluptates ullam atque mollitia. Quibusdam ab sunt culpa earum commodi? Rerum, nihil. Dolore totam tempora
             assumenda?</p>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a v-if="isAuthentify === false" href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
           <img alt="" src="../assets/developpement-site-web.jpg">
@@ -100,7 +108,7 @@
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minus, suscipit veniam voluptatem soluta
             ratione distinctio illum? Nobis id, nulla accusamus molestiae assumenda nemo iste est perferendis voluptates
             repellat sequi!</p>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a v-if="isAuthentify === false" href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
           <img alt="" src="../assets/infographie.png">
@@ -108,7 +116,7 @@
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum quam cum nisi, autem tempora debitis
             corporis, unde labore dignissimos voluptatibus ipsam. Mollitia architecto temporibus reprehenderit deleniti
             provident expedita ea veniam?</p>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a v-if="isAuthentify === false" href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
       </div>
       <h3>Engagez-vous vers un avenir prospere</h3>
@@ -119,7 +127,7 @@
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quos odio natus voluptates, beatae a
             placeat repellendus veritatis nulla eligendi iure! Quibusdam cumque assumenda nisi ea ducimus, eum
             accusantium libero.</p><br><br><br><br>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a v-if="isAuthentify === false" href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
           <img alt="" src="../assets/app mobile.jpg">
@@ -127,7 +135,7 @@
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae recusandae molestias sunt itaque cumque?
             Culpa est sunt, delectus rerum natus tenetur expedita, alias itaque cum beatae voluptates voluptate
             consectetur enim.</p><br><br>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a v-if="isAuthentify === false" href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
           <img alt="" src="../assets/reseaux.jpg">
@@ -135,7 +143,7 @@
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, asperiores mollitia. Possimus, nemo.
             Blanditiis omnis aliquid consequuntur quam consectetur tenetur iste cumque ipsam, quia eveniet, tempore, in
             harum nemo! Recusandae!</p><br><br><br>
-          <a href="/inscriptionPage" class="button">S'inscrire</a>
+          <a v-if="isAuthentify === false" href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
       </div>
     </section>
@@ -279,12 +287,12 @@ export default {
     const isAuthentify = localStorage.getItem('isAuthentify');
     this.isAuthentify = isAuthentify === 'true';
   },
-  
+
   mounted() {
-        this.userName = localStorage.getItem('userName');
-        console.log(this.userName);
-        
-    },
+    this.userName = localStorage.getItem('userName');
+    console.log(this.userName);
+
+  },
   methods: {
     showSeConnecter() {
       this.SeConnecter = true;
@@ -304,10 +312,10 @@ export default {
     showinscription() {
       this.modalinscription = true;
     },
-    hideformation(){
+    hideformation() {
       this.modalformation = false;
     },
-    hideinscrition(){
+    hideinscrition() {
       this.modalinscription = false;
     },
     async comment() {
@@ -345,9 +353,10 @@ export default {
   position: absolute;
   background-color: white;
   width: 30%;
-  border-radius: 15px; /* Coins arrondis */
+  border-radius: 15px;
+  /* Coins arrondis */
   top: 12%;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   left: 68%;
 }
 

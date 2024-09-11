@@ -13,6 +13,7 @@ import infographie from './components/infographie-et-creation-multimedia.vue';
 import design from './components/conception-graphique.vue';
 import mobile from './components/conception-et-developpement-mobile.vue';
 import reseau from './components/reseau-et-administration.vue';
+import lecons from './components/leconFile.vue';
 import inscrire from './components/inscriptionPage.vue';
 import classe from './components/MesClasses.vue';
 
@@ -20,6 +21,7 @@ import classe from './components/MesClasses.vue';
 const routes = [
   { path: '/none', component: HelloWorld },
   { path: '/COMPTE', component: inscription },
+  { path: '/lecon', component: lecons },
   { path: '/PageConnexion', component: connecter },
   { path: '/conception-et-developpement-web', component: formation },
   { path: '/navbarPage', component: nav },
