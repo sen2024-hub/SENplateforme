@@ -28,6 +28,7 @@ export default {
             email: '',
             password: '',
             userId: '',
+            userName: '',
             error: '',
         },
     };
@@ -46,13 +47,17 @@ export default {
                     body: JSON.stringify(this.form)
   
                 });
-                const {token, userId } = response.data;
+                const { token, userId, userName } = response.data;
                 this.isAuthentify = true;
                 localStorage.setItem('isAuthentify', true);
                 localStorage.setItem('userId', userId);
+                localStorage.setItem('userName', userName);
                 this.token = token;
                 this.userId = userId;
-                console.log(userId);
+                this.userName = userName;
+                
+                console.log({'userText':userId});
+                console.log({'userText':userName});
                 window.location.reload();
                 this.$router.push('/');
                 // Redirect the user to a protected route or do something else

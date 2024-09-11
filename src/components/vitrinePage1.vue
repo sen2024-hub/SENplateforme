@@ -26,13 +26,13 @@
                 class="fas fa-chalkboard-teacher"></i> Mes cours</router-link></li>
           <li v-if="isAuthentify === true" @click="showformation()"><a class="menu"><i
                 class="fas fa-graduation-cap"></i> Mes formations</a></li>
+                <li  v-if="isAuthentify === true"><router-link class="menu" style="color: #2CC;" to="/">{{ userName }}</router-link></li>
           <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;"
                 class="fa fa-power-off"></i></router-link></li>
         </ul>
       </nav>
       <div v-if="modalformation" class="formation">
         <div style="display: flex; justify-content: space-between; width: 100%;">
-          <div></div>
           <i @click="hideformation()" style="color: red; font-size: 25px; padding-right: 10px; margin-top: 10px;" class="fas fa-window-close"></i>
         </div>
         <classe />
@@ -48,7 +48,14 @@
             <h3>Decouvrez L'Expertise D'un Leader En Informatique.<br>
               Formations Completes D'infographie , Programmation ,<br> Design , Maintenance et bien d'autre.
             </h3>
-            <router-link to="/inscriptionPage" class="btn">Inscrivez-Vous Dès Aujourd'hui !</router-link>
+            <li @click="showinscription()"><a class="btn"> Inscrivez-Vous Dès Aujourd'hui !</a></li>
+            
+            <div v-if="modalinscription" style="background-color: white;border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);top: 1px;left: 250px;width: 700px;">
+              <div style="display: flex; justify-content: space-between; width: 100%;">
+          <i @click="hideinscrition()" style="color: red; font-size: 25px; padding-right:1px; margin-top: 10px;" class="fas fa-window-close"></i>
+        </div>
+          <inscrire />
+        </div>
           </div>
         </div>
       </div>
@@ -66,8 +73,13 @@
             parcours scolaire
             et
             même sociale.<br></p>
-          <router-link to="/inscriptionPage" class="btn">Inscrivez-Vous
-            Dès Aujourd'hui !</router-link>
+            <li @click="showinscription()"><a class="btn"> Inscrivez-Vous Dès Aujourd'hui !</a></li>
+        </div>
+        <div v-if="modalinscription" style="background-color: white;border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);top: 1px;left: 250px;width: 700px;">
+              <div style="display: flex; justify-content: space-between; width: 100%;">
+          <i @click="hideinscrition()" style="color: red; font-size: 25px; padding-right:1px; margin-top: 10px;" class="fas fa-window-close"></i>
+        </div>
+          <inscrire />
         </div>
       </div>
     </section>
@@ -238,10 +250,12 @@
 import axios from 'axios';
 import connecter from './PageConnexion.vue';
 import classe from './MesClasses.vue';
+import inscrire from './inscriptionPage.vue';
 export default {
   components: {
     connecter,
     classe,
+    inscrire,
   },
   data() {
     return {
@@ -256,6 +270,8 @@ export default {
       objet: '',
       message: '',
       modalformation: false,
+      modalinscription: false,
+      userName: '',
     }
   },
 
@@ -263,6 +279,12 @@ export default {
     const isAuthentify = localStorage.getItem('isAuthentify');
     this.isAuthentify = isAuthentify === 'true';
   },
+  
+  mounted() {
+        this.userName = localStorage.getItem('userName');
+        console.log(this.userName);
+        
+    },
   methods: {
     showSeConnecter() {
       this.SeConnecter = true;
@@ -279,8 +301,14 @@ export default {
     showformation() {
       this.modalformation = true;
     },
+    showinscription() {
+      this.modalinscription = true;
+    },
     hideformation(){
       this.modalformation = false;
+    },
+    hideinscrition(){
+      this.modalinscription = false;
     },
     async comment() {
       try {

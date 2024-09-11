@@ -46,7 +46,7 @@
     };
     </script>
     
-    <style>
+    <style scoped>
   body {
     display: flex;
     justify-content: center;
@@ -65,7 +65,8 @@
     --duration: 3s;
     width: 200px;
     height: 140px;
-    position: relative;
+    margin: auto;
+    margin-top: 18%;
     font-family: 'Arial', sans-serif; /* Police de caractères */
     font-size: 20px; /* Taille de police */
     text-align: center; /* Centrer le texte */
