@@ -26,7 +26,7 @@
                 class="fas fa-chalkboard-teacher"></i> Mes cours</router-link></li>
           <li v-if="isAuthentify === true" @click="showformation()"><a class="menu"><i
                 class="fas fa-graduation-cap"></i> Mes formations</a></li>
-          <li v-if="isAuthentify === true"><router-link class="menu" style="color: #2CC;" to="/">{{ userName
+          <li v-if="isAuthentify === true"><router-link class="menu" style="color: #2CC;" to="/GERERCOMPTE">{{ userName
               }}</router-link></li>
           <li v-if="isAuthentify === true" @click="logout"><router-link class="menu" to="/"><i style="color: red;"
                 class="fa fa-power-off"></i></router-link></li>

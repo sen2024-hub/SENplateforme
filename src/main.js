@@ -16,7 +16,7 @@ import reseau from './components/reseau-et-administration.vue';
 import lecons from './components/leconFile.vue';
 import inscrire from './components/inscriptionPage.vue';
 import classe from './components/MesClasses.vue';
-
+import MONCOMPTE from './components/GERERCOMPTE.vue';
 
 const routes = [
   { path: '/none', component: HelloWorld },
@@ -34,6 +34,9 @@ const routes = [
   { path: '/', component: laodingPage },
   { path: '/vitrinePage1', component: vitrinePage1 }, // Ajout de la route pour vitrinePage1
   { path: '/MesClasses', component: classe },
+  { path: '/GERERCOMPTE', component: MONCOMPTE },
+
+
 ];
 
 const router = createRouter({
