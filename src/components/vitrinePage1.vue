@@ -99,7 +99,7 @@
           GESTION DES PROJETS INFORMATIQUE
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos ipsam minus exercitationem, officia
             voluptates ullam atque mollitia. Quibusdam ab sunt culpa earum commodi? Rerum, nihil. Dolore totam tempora
-            assumenda?</p>
+            assumenda?</p><br>
           <a v-if="isAuthentify === false" href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
@@ -126,7 +126,7 @@
           CONCEPTION GRAPHIQUE
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quos odio natus voluptates, beatae a
             placeat repellendus veritatis nulla eligendi iure! Quibusdam cumque assumenda nisi ea ducimus, eum
-            accusantium libero.</p><br><br><br><br>
+            accusantium libero.</p><br><br><br>
           <a v-if="isAuthentify === false" href="/inscriptionPage" class="button">S'inscrire</a>
         </h2>
         <h2>
@@ -249,7 +249,7 @@
       </div>
     </section>
   </div>
-  <div v-if="SeConnecter" style="width: 100%; position: absolute; left: 0; top: 0; height: 100vh;">
+  <div v-if="SeConnecter" style="width: 100%; position: absolute; left: 0; top: 0; height: 100vh; background-color: rgba(0, 0, 0, 0.3);">
     <connecter style="margin-top: 10%; margin-left: 30%; position: fixed;" />
   </div>
 </template>
@@ -924,4 +924,6 @@ h2 p {
   color: #34b5be;
   /* Couleur des icônes au survol */
 }
+
+
 </style>

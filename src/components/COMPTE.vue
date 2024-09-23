@@ -1,4 +1,5 @@
 <template>
+  <div class="body">
   <div class="registration-form" @submit.prevent="createAcount" id="signup-form">
     <h2 class="form-title">Inscription</h2>
     <form>
@@ -283,6 +284,8 @@
 
     </form>
   </div>
+
+</div>
 </template>
 
 <script>
@@ -326,21 +329,21 @@ export default {
 }
 </script>
 
+
+
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-.box{
+.body{
+background-color: #2cc;
+}
+.box {
   font-size: 15px;
   background: white;
   border-radius: 15px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   width: 100%;
   outline: none;
-}
-.affiche {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
 }
 
 .registration-form {
@@ -373,14 +376,17 @@ label {
   margin-bottom: 5px;
 }
 
+/* Styles pour input et select identiques */
 input,
 select {
-  width: 100%;
+  width: calc(100% - 30px);
+  height: 45px;
   padding: 12px 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 16px;
   background-color: #f7f7f7;
+  box-sizing: border-box;
 }
 
 input:focus,
@@ -404,14 +410,13 @@ select:focus {
 }
 
 .submit-btn:hover {
-  background-color: #2bc9e5;
+  background-color: #1ba8a8;
 }
 
 .profile-picture-container {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
-  
 }
 
 .profile-picture {
@@ -421,19 +426,23 @@ select:focus {
   object-fit: cover;
   border: 5px solid #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
 }
 
 .form-group1 {
   margin-bottom: 25px;
   display: flex;
 }
-.btn {
 
-font-size: 20px;
-font-weight: bold;
-padding: 17px;
-text-decoration: none;
-color: rgb(0, 0, 0);
+input[type="checkbox"] {
+  transform: scale(1); /* Ajustez cette valeur pour changer la taille */
+  margin-right: 1px; /* Espacement à droite de la case à cocher */
+}
+
+.btn {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 17px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 </style>

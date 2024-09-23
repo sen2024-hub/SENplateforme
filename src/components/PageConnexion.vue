@@ -34,38 +34,35 @@ export default {
     };
     },
     methods: {
-       
         async login() {
-            try {
-                const response = await axios.post(' http://localhost:3000/login', {
-                    email: this.email,
-                    password: this.password,
-
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(this.form)
-  
-                });
-                const { token, userId, userName } = response.data;
-                this.isAuthentify = true;
-                localStorage.setItem('isAuthentify', true);
-                localStorage.setItem('userId', userId);
-                localStorage.setItem('userName', userName);
-                this.token = token;
-                this.userId = userId;
-                this.userName = userName;
-                
-                console.log({'userText':userId});
-                console.log({'userText':userName});
-                window.location.reload();
-                this.$router.push('/');
-                // Redirect the user to a protected route or do something else
-            } catch (error) {
-                this.error = error.response.data.message;
+    try {
+        const response = await axios.post('http://localhost:3000/login', {
+            email: this.email,
+            password: this.password
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
             }
-        }
+        });
+
+        const { token, userId, userName } = response.data;
+        this.isAuthentify = true;
+        localStorage.setItem('isAuthentify', true);
+        localStorage.setItem('userId', userId);
+        localStorage.setItem('userName', userName);
+        this.token = token;
+        this.userId = userId;
+        this.userName = userName;
+
+        console.log({'userText': userId});
+        console.log({'userText': userName});
+        // window.location.reload();
+        //this.$router.push('/');
+    } catch (error) {
+        this.error = error.response ? error.response.data.message : 'Une erreur est survenue';
     }
+}
+}
 }
 </script>
 
